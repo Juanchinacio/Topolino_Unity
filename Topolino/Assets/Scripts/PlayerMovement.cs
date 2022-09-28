@@ -12,8 +12,9 @@ public class PlayerMovement : MonoBehaviour
 
     public float jumpForce;
     public float jumpCooldown;
-    public float airMultiplier;
+    public float airMultiplier = 0;
     bool readyToJump;
+
 
     [HideInInspector] public float walkSpeed;
     [HideInInspector] public float sprintSpeed;
@@ -23,8 +24,14 @@ public class PlayerMovement : MonoBehaviour
 
     [Header("Ground Check")]
     public bool grounded;
+    public bool isGrounded;
+
+    public Transform groundCheckPoint, groundCheckPoint2;
 
     public Transform orientation;
+
+    // Valor mayor a 1
+    public float yVelJumpReleaseMod = 2;
 
     float horizontalInput;
     float verticalInput;
@@ -46,6 +53,8 @@ public class PlayerMovement : MonoBehaviour
         MyInput();
         SpeedControl();
 
+        //isGrounded = Physics.OverlapSphere(groundCheckPoint.position, 0.1f);
+
         // handle drag
         if (grounded)
             rb.drag = groundDrag;
@@ -63,15 +72,19 @@ public class PlayerMovement : MonoBehaviour
         horizontalInput = Input.GetAxisRaw("Horizontal");
         verticalInput = Input.GetAxisRaw("Vertical");
 
-        // when to jump
-        if(Input.GetKey(jumpKey) && readyToJump && grounded)
+        //var jumpInputReleased = Input.GetButtonUp("Jump");
+
+
+        if (Input.GetButtonDown("Jump") && grounded)
         {
-            readyToJump = false;
-
-            Jump();
-
-            Invoke(nameof(ResetJump), jumpCooldown);
+            rb.velocity = new Vector3(rb.velocity.x, jumpForce, rb.velocity.z);
+            //grounded = false;
         }
+        if (Input.GetButtonUp("Jump") && rb.velocity.y > 0)
+        {
+            rb.velocity = new Vector3(rb.velocity.x, rb.velocity.y / yVelJumpReleaseMod, rb.velocity.z);
+        }
+
     }
 
     private void MovePlayer()
