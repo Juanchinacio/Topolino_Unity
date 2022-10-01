@@ -13,8 +13,11 @@ public class PlayerMovement : MonoBehaviour
     public float jumpForce;
     public float jumpCooldown;
     public float airMultiplier = 0;
-    bool readyToJump;
+    bool releaseJump = false;
 
+    public float jumpMinAltitud_Y;
+    public float jumpInitialPoint_Y;
+    public float actual_Y;
 
     [HideInInspector] public float walkSpeed;
     [HideInInspector] public float sprintSpeed;
@@ -45,13 +48,15 @@ public class PlayerMovement : MonoBehaviour
         rb = GetComponent<Rigidbody>();
         rb.freezeRotation = true;
 
-        readyToJump = true;
+
     }
 
     private void Update()
     {
         MyInput();
         SpeedControl();
+
+        actual_Y = transform.position.y;
 
         //isGrounded = Physics.OverlapSphere(groundCheckPoint.position, 0.1f);
 
@@ -77,12 +82,20 @@ public class PlayerMovement : MonoBehaviour
 
         if (Input.GetButtonDown("Jump") && grounded)
         {
+            releaseJump = false;
+            grounded = false;
+            jumpInitialPoint_Y = this.transform.position.y;
             rb.velocity = new Vector3(rb.velocity.x, jumpForce, rb.velocity.z);
             //grounded = false;
         }
-        if (Input.GetButtonUp("Jump") && rb.velocity.y > 0)
+        if (Input.GetButtonUp("Jump"))
         {
-            rb.velocity = new Vector3(rb.velocity.x, rb.velocity.y / yVelJumpReleaseMod, rb.velocity.z);
+            releaseJump = true;
+            
+        }
+        if (releaseJump == true && rb.velocity.y > 0 && actual_Y > jumpInitialPoint_Y + jumpMinAltitud_Y)
+        {
+            rb.velocity = new Vector3(rb.velocity.x, (rb.velocity.y / yVelJumpReleaseMod) * Time.deltaTime, rb.velocity.z);
         }
 
     }
@@ -120,8 +133,5 @@ public class PlayerMovement : MonoBehaviour
 
         rb.AddForce(transform.up * jumpForce, ForceMode.Impulse);
     }
-    private void ResetJump()
-    {
-        readyToJump = true;
-    }
+
 }

@@ -1,0 +1,34 @@
+{
+    "name": "Controles",
+    "maps": [
+        {
+            "name": "Topolino",
+            "id": "89634a47-1311-43f1-b43f-045e665a3ed0",
+            "actions": [
+                {
+                    "name": "Jump",
+                    "type": "Value",
+                    "id": "af4f4738-68bd-41f8-8a01-30d031574440",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": true
+                }
+            ],
+            "bindings": [
+                {
+                    "name": "",
+                    "id": "8be4e362-c771-40f6-b642-4aff1bda48c0",
+                    "path": "<Keyboard>/space",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Jump",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                }
+            ]
+        }
+    ],
+    "controlSchemes": []
+}
