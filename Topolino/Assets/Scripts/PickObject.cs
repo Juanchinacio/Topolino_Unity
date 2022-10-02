@@ -1,6 +1,7 @@
-using System.Collections;
+ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.InputSystem;
 
 public class PickObject : MonoBehaviour
 {
@@ -28,22 +29,36 @@ public class PickObject : MonoBehaviour
         front_Object_Position = front_Object.transform;
     }
 
-    void Update()
+    public void OnGrab(InputValue value)
     {
-        Debug.Log("Cantidad de objetos: " + Objetos.Count + " Tecla E presionada: " + Input.GetKey(pickKey));
-        int cantidadObjetos = Objetos.Count;
-        //bool presionandoTeclaE = Input.GetKeyDown(pickKey);
-
-
-        if (contadorObjetos > 0 && Input.GetKeyDown(pickKey) && llevandoObjeto == false)
+        Debug.Log("GRABBBBBBBBBBBBBBBBBBB");
+        //Debug.Log("QUE PASAAAAAAAAAAAAAAAAAA");
+        if (value.isPressed && contadorObjetos > 0 && llevandoObjeto == false)
         {
-            //Debug.Log("K onda");
             CogerObjeto();
         }
-        else if (Input.GetKeyDown(pickKey) && llevandoObjeto == true)
+        if (value.isPressed == false && llevandoObjeto == true)
         {
             SoltarObjeto();
         }
+    }
+
+    void Update()
+    {
+        //Debug.Log("Cantidad de objetos: " + Objetos.Count + " Tecla E presionada: " + Input.GetKey(pickKey));
+        //int cantidadObjetos = Objetos.Count;
+        ////bool presionandoTeclaE = Input.GetKeyDown(pickKey);
+        //
+        //
+        //if (contadorObjetos > 0 && Input.GetKeyDown(pickKey) && llevandoObjeto == false)
+        //{
+        //    //Debug.Log("K onda");
+        //    CogerObjeto();
+        //}
+        //else if (Input.GetKeyDown(pickKey) && llevandoObjeto == true)
+        //{
+        //    SoltarObjeto();
+        //}
     }
 
     public void SoltarObjeto()
@@ -99,8 +114,11 @@ public class PickObject : MonoBehaviour
 
     private void OnTriggerExit(Collider other)
     {
-        contadorObjetos--;
-        Objetos.Remove(other);
+        if (other.gameObject.CompareTag("Object(Top)") || other.gameObject.CompareTag("Object(Front)") || other.gameObject.CompareTag("Object(Physics)"))
+        {
+            contadorObjetos--;
+            Objetos.Remove(other);
+        }
     }
     private void OnTriggerEnter(Collider other)
     {
