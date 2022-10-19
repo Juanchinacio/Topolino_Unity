@@ -33,6 +33,10 @@ public class Player_Movement : MonoBehaviour
     private float friction;
     public Transform orientation;
 
+    public bool move_X_Block = false;
+    public bool move_Z_Block = false;
+
+
     public bool pressingKey;
 
     void Awake()
@@ -43,7 +47,7 @@ public class Player_Movement : MonoBehaviour
 
     public void OnMovement(InputValue value)
     {
-        Debug.Log("MOVIENDOMEEEEEEEEEEEEEEEEEEEEEE");
+        //Debug.Log("MOVIENDOMEEEEEEEEEEEEEEEEEEEEEE");
         inputMovement = value.Get<Vector2>();
         //moveDirection = orientation.forward * verticalInput + orientation.right * horizontalInput;
         //inputVector = new Vector3(inputMovement.x, 0, inputMovement.y);
@@ -62,7 +66,20 @@ public class Player_Movement : MonoBehaviour
             pressingKey = false;
         }
 
-        desiredVelocity = new Vector3(inputVector.x, 0f, inputVector.z) * Mathf.Max(maxSpeed - friction, 0f);
+        if (move_X_Block == true)
+        {
+            desiredVelocity = new Vector3(0f, 0f, inputVector.z) * Mathf.Max(maxSpeed - friction, 0f);
+        }
+        else if (move_Z_Block == true)
+        {
+            desiredVelocity = new Vector3(inputVector.x, 0f, 0f) * Mathf.Max(maxSpeed - friction, 0f);
+        }
+        else
+        {
+            desiredVelocity = new Vector3(inputVector.x, 0f, inputVector.z) * Mathf.Max(maxSpeed - friction, 0f);
+        }
+
+        
     }
 
     void FixedUpdate()
