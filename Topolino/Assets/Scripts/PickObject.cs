@@ -31,7 +31,7 @@ public class PickObject : MonoBehaviour
 
     public void OnGrab(InputValue value)
     {
-        Debug.Log("GRABBBBBBBBBBBBBBBBBBB");
+        //Debug.Log("GRABBBBBBBBBBBBBBBBBBB");
         //Debug.Log("QUE PASAAAAAAAAAAAAAAAAAA");
         if (value.isPressed && contadorObjetos > 0 && llevandoObjeto == false)
         {
