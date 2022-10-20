@@ -6,8 +6,8 @@ using UnityEngine.Events;
 public class Button : MonoBehaviour
 {
     public int contador = 0;
-    UnityEvent activaccion;
-    UnityEvent desactivaccion;
+    public UnityEvent activaccion;
+    public UnityEvent desactivaccion;
 
     private Animator animaciones;
 
@@ -28,6 +28,7 @@ public class Button : MonoBehaviour
             // Llamar a evento
             if (activaccion != null)
             {
+                Debug.Log("Invoco Evento");
                 activaccion.Invoke();
             }
             else

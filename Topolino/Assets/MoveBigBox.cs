@@ -58,6 +58,7 @@ public class MoveBigBox : MonoBehaviour
         {
             GetComponent<Player_Movement>().move_Z_Block = true;
         }
+
         
 
         Debug.Log("Recolocando jugador");

@@ -66,6 +66,7 @@ public class Player_Movement : MonoBehaviour
             pressingKey = false;
         }
 
+        // bloquo movimiento topolino
         if (move_X_Block == true)
         {
             desiredVelocity = new Vector3(0f, 0f, inputVector.z) * Mathf.Max(maxSpeed - friction, 0f);

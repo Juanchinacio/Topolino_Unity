@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.InputSystem;
+using DG.Tweening;
 
 public class PickObject : MonoBehaviour
 {
@@ -76,7 +77,12 @@ public class PickObject : MonoBehaviour
 
     public void CogerObjeto()
     {
-        Debug.Log("Coger objwto");
+        Debug.Log("Coger objeto");
+
+        Vector3 posicionFinal_Top = top_Object_Position.position;
+        Vector3 rotacionFinal_Top = top_Object_Position.eulerAngles;
+        Vector3 posicionFinal_Front = front_Object_Position.position;
+        Vector3 rotacionFinal_Front = front_Object_Position.eulerAngles;
 
         llevandoObjeto = true;
 
@@ -94,18 +100,18 @@ public class PickObject : MonoBehaviour
         // Dependiedo del tag, el objeto es cogido arriba o enfrente
         if (objetoCogido.gameObject.CompareTag("Object(Top)"))
         {
-            objetoCogido.transform.position = top_Object_Position.position;
-            objetoCogido.transform.rotation = top_Object_Position.rotation;
+            objetoCogido.transform.DOMove(posicionFinal_Top, 1);
+            objetoCogido.transform.DORotate(rotacionFinal_Top, 1);
         }
         if (objetoCogido.gameObject.CompareTag("Object(Front)"))
         {
-            objetoCogido.transform.position = front_Object_Position.position;
-            objetoCogido.transform.rotation = front_Object_Position.rotation;
+            objetoCogido.transform.DOMove(posicionFinal_Front, 1);
+            objetoCogido.transform.DORotate(rotacionFinal_Front, 1);
         }
         if (objetoCogido.gameObject.CompareTag("Object(Physics)"))
         {
-            objetoCogido.transform.position = front_Object_Position.position;
-            objetoCogido.transform.rotation = front_Object_Position.rotation;
+            objetoCogido.transform.DOMove(posicionFinal_Front, 1);
+            objetoCogido.transform.DORotate(rotacionFinal_Front, 1);
             //this.GetComponent<SpringJoint>().connectedBody = objetoCogido.gameObject.GetComponent<Rigidbody>();
             this.GetComponent<SpringJoint>().connectedBody = objetoCogido.gameObject.GetComponent<Rigidbody>();
         }
