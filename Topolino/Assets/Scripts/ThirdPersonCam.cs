@@ -1,6 +1,8 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.InputSystem;
+
 
 public class ThirdPersonCam : MonoBehaviour
 {
@@ -18,6 +20,11 @@ public class ThirdPersonCam : MonoBehaviour
     public GameObject combatCam;
     public GameObject topDownCam;
 
+    public Vector2 inputMovement;
+
+    public float horizontalInput;
+    public float verticalInput;
+
     public CameraStyle currentStyle;
     public enum CameraStyle
     {
@@ -28,8 +35,20 @@ public class ThirdPersonCam : MonoBehaviour
 
     private void Start()
     {
-        Cursor.lockState = CursorLockMode.Locked;
-        Cursor.visible = false;
+        //Cursor.lockState = CursorLockMode.Locked;
+        //Cursor.visible = false;
+    }
+    public void OnMovement(InputValue value)
+    {
+        //Debug.Log("MOVIENDOMEEEEEEEEEEEEEEEEEEEEEE");
+        inputMovement = value.Get<Vector2>();
+        horizontalInput = inputMovement.x;
+        verticalInput = inputMovement.y;
+
+        //moveDirection = orientation.forward * verticalInput + orientation.right * horizontalInput;
+        //inputVector = new Vector3(inputMovement.x, 0, inputMovement.y);
+
+        //inputVector = (orientation.forward * inputMovement.y + orientation.right * inputMovement.x).normalized;
     }
 
     private void Update()
@@ -46,8 +65,7 @@ public class ThirdPersonCam : MonoBehaviour
         // roate player object
         if (currentStyle == CameraStyle.Basic || currentStyle == CameraStyle.Topdown)
         {
-            float horizontalInput = Input.GetAxis("Horizontal");
-            float verticalInput = Input.GetAxis("Vertical");
+
             Vector3 inputDir = orientation.forward * verticalInput + orientation.right * horizontalInput;
 
             if (inputDir != Vector3.zero)
