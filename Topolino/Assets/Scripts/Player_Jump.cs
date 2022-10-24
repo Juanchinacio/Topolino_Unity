@@ -12,31 +12,38 @@ public class Player_Jump : MonoBehaviour
     Grounded ground;
     GravityScale gravityScale;
 
-    // Maxima altura de salto
+    // Maximum jump height
     public float jumpHeight = 7f;
-    // Tiempo que se tarda en alcanzar la altura de salto
+    // How long it takes to reach that height before coming back down
     public float timeToJumpApex;
-    // Cache de salto
+    // How far from ground should we cache your jump?
     public float jumpBuffer = .15f;
+    // How long should coyote time last?
     public float coyoteTime = .15f;
-    public float gravMultiplier;
-    public float jumpSpeed;
+    
+    // Gravity multiplier to apply when going up
     public float upwardMovementMultiplier = 1f;
-    public float jumpCutOff;
+    // Gravity multiplier to apply when coming down
     public float downwardMovementMultiplier = 6.17f;
+    // The fastest speed the character can fall
     public float speedLimit;
+    // Gravity multiplier when you let go of jump
+    public float jumpCutOff;
+
+    public float gravMultiplier;
 
     Vector3 velocity;
 
+    float jumpSpeed;
     float defaultGravityScale;
     float coyoteTimeCounter = 0;
     float jumpBufferCounter;
     
-    public bool desiredJump;
-    public bool pressingJump;
-    public bool onGround;
+    bool desiredJump;
+    bool pressingJump;
+    bool onGround;
     bool currentlyJumping;
-    bool variableJumpHeight;
+    bool variableJumpHeight = true;
 
     void Awake()
     {
@@ -86,7 +93,6 @@ public class Player_Jump : MonoBehaviour
         // Tratar de saltar, siempre que se desee saltar
         if (desiredJump)
         {
-            Debug.Log("Ave maria");
             DoAJump();
             rb3D.velocity = velocity;
             return;
@@ -177,7 +183,6 @@ public class Player_Jump : MonoBehaviour
         // Ejecutar salto si toco el suelo o estoy en coyoteTime
         if (onGround || (coyoteTimeCounter > 0.03f && coyoteTimeCounter < coyoteTime))
         {
-            Debug.Log("OOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOO");
             desiredJump = false;
             jumpBufferCounter = 0f;
             coyoteTimeCounter = 0f;
@@ -198,6 +203,7 @@ public class Player_Jump : MonoBehaviour
             }
 
             velocity.y += jumpSpeed;
+
             currentlyJumping = true;
             
             if (jumpBuffer == 0)
