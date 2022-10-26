@@ -12,13 +12,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 68c2f971812c46e28c2bd15ab9364a00, type: 3}
   m_Name: BlockyEditorSettings
   m_EditorClassIdentifier: 
-  target: {x: 0, y: 0, z: 0}
+  target: {x: 18, y: -1, z: 40}
   editMode: 0
   gridHeight: -1
-  rotation: {x: 0, y: 0, z: 0}
+  rotation: {x: 0, y: 180, z: 0}
   randomRotation: 0
   brushSize: 0
-  palette: {fileID: 11400000, guid: bd08f01945698264e960053e1d9711ce, type: 2}
+  palette: {fileID: 11400000, guid: f63a9507693d38b448ef2afe7b598740, type: 2}
   parentSetter: {fileID: 2969619518228119928}
   useUndo: 1
 --- !u!114 &2969619518228119928
