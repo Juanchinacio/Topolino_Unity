@@ -5,28 +5,30 @@ using UnityEngine.InputSystem;
 
 public class new_PlayerMovement : MonoBehaviour
 {
-
+    //[Header("Movement")]
     public float groundDrag;
+    public float moveSpeed;
+
     public float playerHeight;
     public LayerMask whatIsGround;
     bool grounded;
 
     Vector2 inputMovement;
-    public float moveSpeed;
     public Transform orientation;
     public Transform player;
     public Transform playerObj;
     public float rotationSpeed;
     Transform cameraTransform;
     Rigidbody rb;
+    Grounded ground;
 
-    
     //public Transform ori
 
     void Start()
     {
         cameraTransform = Camera.main.transform;
         rb = transform.GetComponent<Rigidbody>();
+        ground = GetComponent<Grounded>();
     }
     void Update()
     {
@@ -34,8 +36,7 @@ public class new_PlayerMovement : MonoBehaviour
         SpeedControl();
 
         // Comprobar si esta en el suelo
-        grounded = Physics.Raycast(transform.position, Vector3.down, playerHeight * 0.5f + 0.2f, whatIsGround);
-        Debug.DrawRay(transform.position, Vector3.down, Color.red, playerHeight * 0.5f + 0.2f);
+        grounded = ground.GetOnGround();
 
         //Aplicar drag
         if (grounded)
@@ -62,7 +63,7 @@ public class new_PlayerMovement : MonoBehaviour
 
     void FixedUpdate()
     {
-        PlyerMove();
+        PlayerMove();
     }
 
     public void OnMovement(InputValue value)
@@ -70,7 +71,7 @@ public class new_PlayerMovement : MonoBehaviour
         inputMovement = value.Get<Vector2>();
     }
 
-    public void PlyerMove()
+    public void PlayerMove()
     {
         Vector3 moveDirection = orientation.right * inputMovement.x + orientation.forward * inputMovement.y;
         rb.AddForce(moveDirection.normalized * moveSpeed * 10, ForceMode.Force);
@@ -86,4 +87,5 @@ public class new_PlayerMovement : MonoBehaviour
         }
         
     }
+
 }
