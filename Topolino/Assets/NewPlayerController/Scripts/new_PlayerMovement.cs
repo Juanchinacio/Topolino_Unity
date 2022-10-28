@@ -18,16 +18,16 @@ public class new_PlayerMovement : MonoBehaviour
     public Transform player;
     public Transform playerObj;
     public float rotationSpeed;
-    Transform cameraTransform;
-    Rigidbody rb;
+    public Transform cameraTransform;
+    public Rigidbody rb;
     Grounded ground;
 
     //public Transform ori
 
     void Start()
     {
-        cameraTransform = Camera.main.transform;
-        rb = transform.GetComponent<Rigidbody>();
+        //cameraTransform = Camera.main.transform;
+        //rb = transform.GetComponent<Rigidbody>();
         ground = GetComponent<Grounded>();
     }
     void Update()
