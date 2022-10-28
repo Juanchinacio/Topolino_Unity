@@ -5,14 +5,14 @@ using UnityEngine;
 public class cameraDirection : MonoBehaviour
 {
     //public GameObject direction;
-    Transform cameraTransform;
+    public Transform cameraTransform;
     public float smootTime = 0.1f;
     public float turnSmoothTime = 0.1f;
     float speedSmoothVelocity;
 
     void Start()
     {
-        cameraTransform = Camera.main.transform;
+        //cameraTransform = Camera.main.transform;
     }
     void Update()
     {
