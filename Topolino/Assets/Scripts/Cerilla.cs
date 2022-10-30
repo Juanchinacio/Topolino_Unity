@@ -10,6 +10,7 @@ public class Cerilla : MonoBehaviour
     public float ActualCooldownDuration;
     public float CooldownDuration = 10;
     public bool IsAvailable;
+    public GameObject fire;
     public void Update()
     {
         if (IsAvailable)
@@ -29,7 +30,8 @@ public class Cerilla : MonoBehaviour
         //transform.GetComponent<Renderer>().material.SetColor("_Color", Color.red);
         //gameObject.GetComponent<Renderer>().material.color = Color.red;
         transform.GetComponent<MeshRenderer>().material = encendido;
-        
+        fire.GetComponent<Collider>().enabled = true;
+
         ActualCooldownDuration = CooldownDuration;
         IsAvailable = true;
     }
@@ -39,6 +41,7 @@ public class Cerilla : MonoBehaviour
         //transform.GetComponent<Renderer>().material.SetColor("_Color", Color.white);
         //gameObject.GetComponent<Renderer>().material.color = Color.white;
         transform.GetComponent<MeshRenderer>().material = apagado;
+        fire.GetComponent<Collider>().enabled = false;
         IsAvailable = false;
     }
 

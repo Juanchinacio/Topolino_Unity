@@ -4,6 +4,30 @@
 EditorBuildSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
-  m_Scenes: []
+  m_Scenes:
+  - enabled: 1
+    path: Assets/Scenes/LevelSelector.unity
+    guid: f6fd37d317b77b745aac2bb434e0b237
+  - enabled: 1
+    path: Assets/Scenes/Level1_Alcantarillas.unity
+    guid: b62402e084612f640a88c8803404ddfa
+  - enabled: 1
+    path: Assets/Scenes/Player_Controler_Test_Scene.unity
+    guid: 3c45fd0c0d88c264696ac435101e39da
+  - enabled: 1
+    path: Assets/Scenes/SampleScene.unity
+    guid: 9fc0d4010bbf28b4594072e72b8655ab
+  - enabled: 1
+    path: Assets/Scenes/Cajas.unity
+    guid: 2d790e4e076331846a093b0b96cdf2e0
+  - enabled: 1
+    path: Assets/Scenes/Cerillas.unity
+    guid: 43b7faa3d5ef1424d9052d833f98f27b
+  - enabled: 1
+    path: Assets/Scenes/Eventos.unity
+    guid: 96e56a3d4ed17104999b1641c4d97f6e
+  - enabled: 1
+    path: Assets/Scenes/Suelos.unity
+    guid: 4b983f44a8a6cdb42bf5ad706b09999b
   m_configObjects:
     com.unity.input.settings: {fileID: 11400000, guid: fc5ca933e9d0bab458b11f9d9d9003b0, type: 2}

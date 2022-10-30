@@ -4,29 +4,37 @@ using UnityEngine;
 
 public class Grounded : MonoBehaviour
 {
-    private bool onGround;
+    public GameObject playerRoot;
+    public LayerMask groundLayers;
+    public bool onGround;
+    public string groundTag;
 
-    [Header("Collider Settings")]
-    [SerializeField] [Tooltip("Length of the ground-checking collider")] private float groundLength = 0.95f;
-    [SerializeField] [Tooltip("Distance between the ground-checking colliders")] private Vector3 colliderOffset;
-
-    [Header("Layer Masks")]
-    [SerializeField] [Tooltip("Which layers are read as the ground")] private LayerMask groundLayer;
-
-
-    private void Update()
+    void OnTriggerEnter(Collider other)
     {
-        //Determine if the player is stood on objects on the ground layer, using a pair of raycasts
-        onGround = Physics.Raycast(transform.position + colliderOffset, Vector2.down, groundLength, groundLayer);
+        if (other.gameObject.layer == 6)
+        {
+            onGround = true;
+            groundTag = other.gameObject.tag;
+        }
+        if (other.tag == "PlataformaMovil")
+        {
+            playerRoot.transform.parent = other.transform;
+        }
+    }
+    private void OnTriggerExit(Collider other)
+    {
+        if (other.gameObject.layer == 6)
+        {
+            onGround = false;
+            groundTag = "null";
+        }
+        if (other.tag == "PlataformaMovil")
+        {
+            playerRoot.transform.parent = null;
+        }
     }
 
-    private void OnDrawGizmos()
-    {
-        //Draw the ground colliders on screen for debug purposes
-        if (onGround) { Gizmos.color = Color.green; } else { Gizmos.color = Color.red; }
-        Gizmos.DrawLine(transform.position + colliderOffset, transform.position + colliderOffset + Vector3.down * groundLength);
-    }
-
-    //Send ground detection to other scripts
     public bool GetOnGround() { return onGround; }
+    public string GetGroundTag() { return groundTag; }
+
 }

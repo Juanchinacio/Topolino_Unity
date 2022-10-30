@@ -15,19 +15,27 @@ public class MoveBigBox : MonoBehaviour
     public GameObject orientation;
     public bool objetoInteractuable = false;
 
+    private GameObject caja;
+
+
+    public bool puebloCoger = true;
+
+    new_PlayerMovement player_Movement;
+    new_Jump player_Jump;
+
     void Start()
     {
-        
+        player_Jump = transform.GetComponent<new_Jump>();
+        player_Movement = transform.GetComponent<new_PlayerMovement>();
     }
 
     public void OnGrab(InputValue value)
     {
         //Debug.Log("QUE PASAAAAAAAAAAAAAAAAAA");
-        if (value.isPressed && arrastandoObjeto == false && objetoInteractuable == true)
+        if (value.isPressed && arrastandoObjeto == false && objetoInteractuable == true && puebloCoger)
         {
             ArrastarObjeto();
-        }
-        if (value.isPressed == false && arrastandoObjeto == true)
+        }else if (value.isPressed && arrastandoObjeto == true)
         {
             SoltarObjeto();
         }
@@ -35,34 +43,34 @@ public class MoveBigBox : MonoBehaviour
 
     public void ArrastarObjeto()
     {
+        puebloCoger = false;
         arrastandoObjeto = true;
+        player_Jump.Set_canJump(false);
 
         float step = playerSpeed * Time.deltaTime; // calculate distance to move
-                                                   //newPlayerPosition = new Vector3(newPlayerPosition.position.x, transform.position.y, newPlayerPosition.position.z);
+
         Vector3 posicionFinal = new Vector3(newPlayerPosition.position.x, transform.position.y, newPlayerPosition.position.z);
 
-        //transform.DOMove(posicionFinal, 1);
-        ////transform.DOMove(posicionFinal, 1);
-        ////objectMove.transform.parent = transform;
+        player_Movement.Set_OtherPlayerViewDirection(true);
+        player_Movement.Set_OtherViewDirection(objectMove.transform);
+
+
         StartCoroutine(ReposicionarJugador(posicionFinal));
 
         // La caja es hijo de topolino
-
-
         // Bloqueo el movimiento en los ejes que me interesa
         if (myDirection == Direction.Top || myDirection == Direction.Bottom)
         {
-            GetComponent<Player_Movement>().move_X_Block = true;
+            Debug.Log("Bloqueo en eje X");
+            player_Movement.Set_MoveBlock_X(true);// = true;
         }
-        else if (myDirection == Direction.Left || myDirection == Direction.Right)
+        if (myDirection == Direction.Left || myDirection == Direction.Right)
         {
-            GetComponent<Player_Movement>().move_Z_Block = true;
+            Debug.Log("Bloqueo en eje Z");
+            player_Movement.Set_MoveBlock_Z(true);// = true;
         }
-
         
-
         Debug.Log("Recolocando jugador");
-
     }
 
     IEnumerator ReposicionarJugador(Vector3 _posicionFinal)
@@ -74,11 +82,15 @@ public class MoveBigBox : MonoBehaviour
 
     public void SoltarObjeto()
     {
+        puebloCoger = true;
+        player_Jump.Set_canJump(true);
         arrastandoObjeto = false;
         objectMove.transform.parent = null;
         // Quitar restricciones de movimiento de Topolino
-        GetComponent<Player_Movement>().move_Z_Block = false;
-        GetComponent<Player_Movement>().move_X_Block = false;
+        player_Movement.Set_OtherPlayerViewDirection(false);
+        player_Movement.Set_OtherViewDirection(null);
+        player_Movement.Set_MoveBlock_Z(false);// = false;
+        player_Movement.Set_MoveBlock_X(false);// = false;
     }
 
     private void OnTriggerEnter(Collider other)
@@ -89,6 +101,8 @@ public class MoveBigBox : MonoBehaviour
             newPlayerPosition = other.transform.GetChild(0);
             objectMove = other.transform.parent.gameObject;
             objetoInteractuable = true;
+
+            player_Movement.Set_Other_Direction(other.transform);
         }
         if (other.gameObject.name == "Trigger_L")
         {
@@ -96,6 +110,9 @@ public class MoveBigBox : MonoBehaviour
             newPlayerPosition = other.transform.GetChild(0);
             objectMove = other.transform.parent.gameObject;
             objetoInteractuable = true;
+
+            player_Movement.Set_Other_Direction(other.transform);
+
         }
         if (other.gameObject.name == "Trigger_T")
         {
@@ -103,6 +120,9 @@ public class MoveBigBox : MonoBehaviour
             newPlayerPosition = other.transform.GetChild(0);
             objectMove = other.transform.parent.gameObject;
             objetoInteractuable = true;
+
+            player_Movement.Set_Other_Direction(other.transform);
+
         }
         if (other.gameObject.name == "Trigger_B")
         {
@@ -110,6 +130,9 @@ public class MoveBigBox : MonoBehaviour
             newPlayerPosition = other.transform.GetChild(0);
             objectMove = other.transform.parent.gameObject;
             objetoInteractuable = true;
+
+            player_Movement.Set_Other_Direction(other.transform);
+
         }
     }
     private void OnTriggerExit(Collider other)
@@ -117,6 +140,9 @@ public class MoveBigBox : MonoBehaviour
         if (other.gameObject.name == "Trigger_B" || other.gameObject.name == "Trigger_T" || other.gameObject.name == "Trigger_L" || other.gameObject.name == "Trigger_R")
         {
             objetoInteractuable = false;
+            player_Movement.Set_Other_Direction(null);
+            
+            
         }
         myDirection = Direction.None;
     }
