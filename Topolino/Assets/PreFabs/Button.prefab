@@ -112,6 +112,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   contador: 0
+  activaccion:
+    m_PersistentCalls:
+      m_Calls: []
+  desactivaccion:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!95 &5548572582385039138
 Animator:
   serializedVersion: 4

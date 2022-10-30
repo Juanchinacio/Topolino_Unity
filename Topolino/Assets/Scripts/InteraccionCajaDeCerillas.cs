@@ -55,8 +55,8 @@ public class InteraccionCajaDeCerillas : MonoBehaviour
         float step = playerSpeed * Time.deltaTime; // calculate distance to move
 
         // Posiscion de donde tiene que llevar Topolino la cerrilla
-        Vector3 posicionFinalCerilla = posicionCerillaMano.position;
-        Vector3 rotacionFinalCerilla = posicionCerillaMano.eulerAngles;
+        //Vector3 posicionFinalCerilla = posicionCerillaMano.position;
+        //Vector3 rotacionFinalCerilla = posicionCerillaMano.eulerAngles;
         // Llama al metodo CrearCerilla y paso una referencia a la cerilla creada
         cerillaID = cajaCerilla.GetComponent<CajaCerillas>().CrearCerilla();
         cerilla = GameObject.Find(cerillaID);
@@ -64,16 +64,20 @@ public class InteraccionCajaDeCerillas : MonoBehaviour
         cerilla.GetComponent<Cerilla>().Encender();
         // Desactivo fisicas
         cerilla.GetComponent<Rigidbody>().isKinematic = true;
-        //cerilla.GetComponent<BoxCollider>().enabled = false;
+        cerilla.GetComponent<Collider>().isTrigger = true;
 
         // Emparento la cerilla con Topolino
         cerilla.transform.parent = posicionCerillaMano;
         // La cerrilla creada se tranlada a la mano de topolino
-        cerilla.transform.DOMove(posicionFinalCerilla, 1);
-        cerilla.transform.DORotate(rotacionFinalCerilla, 1);
+        cerilla.transform.position = posicionCerillaMano.position;
+        cerilla.transform.rotation = posicionCerillaMano.rotation;
+
+        //cerilla.transform.DOMove(posicionFinalCerilla, 1);
+        //cerilla.transform.DORotate(rotacionFinalCerilla, 1);
 
 
         Debug.Log("Creo y recogo cerilla");
+        
     }
 
     public void CogerCerillaSuelo()
@@ -84,12 +88,14 @@ public class InteraccionCajaDeCerillas : MonoBehaviour
         Vector3 rotacionFinalCerilla = posicionCerillaMano.eulerAngles;
         // Desactivo fisicas
         cerilla.GetComponent<Rigidbody>().isKinematic = true;
-        //cerilla.GetComponent<BoxCollider>().enabled = false;
+        cerilla.GetComponent<Collider>().isTrigger = true;
         // Emparento la cerilla con Topolino
         cerilla.transform.parent = posicionCerillaMano;
         // La cerrilla creada se tranlada a la mano de topolino
-        cerilla.transform.DOMove(posicionFinalCerilla, 1);
-        cerilla.transform.DORotate(rotacionFinalCerilla, 1);
+        cerilla.transform.position = posicionCerillaMano.position;
+        cerilla.transform.rotation = posicionCerillaMano.rotation;
+        //cerilla.transform.DOMove(posicionFinalCerilla, 1);
+        //cerilla.transform.DORotate(rotacionFinalCerilla, 1);
     }
 
     public void SoltarCerilla()
@@ -97,7 +103,7 @@ public class InteraccionCajaDeCerillas : MonoBehaviour
         cerilla.transform.parent = null;
         // Activo fisicas
         cerilla.GetComponent<Rigidbody>().isKinematic = false;
-        //cerilla.GetComponent<BoxCollider>().enabled = true;
+        cerilla.GetComponent<Collider>().isTrigger = false;
         cerilla.GetComponent<Cerilla>().Apagar();
         llevoCerilla = false;
     }

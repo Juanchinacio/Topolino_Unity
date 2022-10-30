@@ -80,4 +80,5 @@ public class plataformaMovil : MonoBehaviour
             nextWayPoint = wayPoints[aux];
         }  
     }
+
 }

@@ -10,5 +10,10 @@ public class fuego : MonoBehaviour
         {
             other.GetComponent<Cerilla>().Encender();
         }
+        if (other.gameObject.tag == "Telaranya")
+        {
+            Debug.Log("QUEMAR TELARANYA");
+            other.GetComponent<telaranya>().Quemar();
+        }
     }
 }

@@ -5,30 +5,41 @@ using UnityEngine.InputSystem;
 
 public class new_PlayerMovement : MonoBehaviour
 {
-    //[Header("Movement")]
-    public float groundDrag;
+    [Header("Movement Settings")]
     public float moveSpeed;
-
-    public float playerHeight;
-    public LayerMask whatIsGround;
-    bool grounded;
-
-    Vector2 inputMovement;
-    public Transform orientation;
-    public Transform player;
-    public Transform playerObj;
     public float rotationSpeed;
-    public Transform cameraTransform;
-    public Rigidbody rb;
-    Grounded ground;
+    public float groundDrag;
+    public float iceDrag = 0f;
+    public float airDrag = 2f;
+    public float fangoDrag = 6f;
 
-    //public Transform ori
+    [Header("Ground Checker")]
+    public LayerMask whatIsGround;
+    public Grounded groundChecker;
+    
+
+    [Header("Transforms")]
+    public Transform Camera_Direction;
+    public Transform player_Transform;
+    public Transform player_Direction;
+    public Transform cameraTransform;   // Para que la direccion rote hacia donde mira la camara
+    Transform other_Direction;
+
+    [Header("Debug")]
+    public bool MoveBlock_Z = false;
+    public bool MoveBlock_X = false;
+    public bool otherPlayerViewDirection = false;
+    public Transform otherViewDirection;
+
+    Rigidbody rb;
+    public bool grounded;
+    Vector2 inputMovement;
 
     void Start()
     {
         //cameraTransform = Camera.main.transform;
-        //rb = transform.GetComponent<Rigidbody>();
-        ground = GetComponent<Grounded>();
+        rb = transform.GetComponent<Rigidbody>();
+        //groundChecker = GetComponent<Grounded>();
     }
     void Update()
     {
@@ -36,28 +47,49 @@ public class new_PlayerMovement : MonoBehaviour
         SpeedControl();
 
         // Comprobar si esta en el suelo
-        grounded = ground.GetOnGround();
+        grounded = groundChecker.GetOnGround();
 
         //Aplicar drag
         if (grounded)
         {
-            rb.drag = groundDrag;
+            if (groundChecker.GetGroundTag() == "Ice")
+            {
+                rb.drag = iceDrag;
+            }
+            else if (groundChecker.GetGroundTag() == "Fango")
+            {
+                rb.drag = fangoDrag;
+            }
+            else
+            {
+                rb.drag = groundDrag;
+            }
         }
         else
         {
-            rb.drag = 0f;
+            rb.drag = airDrag;
         }
 
+
         // Rotar orientacion
-        Vector3 viewDir = player.position - new Vector3(cameraTransform.position.x, player.position.y, cameraTransform.position.z);
-        orientation.forward = viewDir.normalized;
+        if (otherPlayerViewDirection == false)
+        {
+            Vector3 viewDir = player_Transform.position - new Vector3(cameraTransform.position.x, player_Transform.position.y, cameraTransform.position.z);
+            Camera_Direction.forward = viewDir.normalized;
+        }
+        else
+        {
+            player_Direction.LookAt(new Vector3(otherViewDirection.position.x, player_Direction.position.y, otherViewDirection.position.z));
+        }
+        
+
 
         // Rotar el modelo del jugador
-        Vector3 inputDir = orientation.forward * inputMovement.y + orientation.right * inputMovement.x;
+        Vector3 inputDir = Camera_Direction.forward * inputMovement.y + Camera_Direction.right * inputMovement.x;
 
         if (inputDir != Vector3.zero)
         {
-            playerObj.forward = Vector3.Slerp(playerObj.forward, inputDir.normalized, Time.deltaTime * rotationSpeed);
+            player_Direction.forward = Vector3.Slerp(player_Direction.forward, inputDir.normalized, Time.deltaTime * rotationSpeed);
         }
     }
 
@@ -73,7 +105,20 @@ public class new_PlayerMovement : MonoBehaviour
 
     public void PlayerMove()
     {
-        Vector3 moveDirection = orientation.right * inputMovement.x + orientation.forward * inputMovement.y;
+        Vector3 moveDirection;
+        if (MoveBlock_X)
+        {
+            moveDirection = other_Direction.right * 0 + other_Direction.forward * inputMovement.y;
+        }
+        else if (MoveBlock_Z)
+        {
+            moveDirection = other_Direction.right * inputMovement.x + other_Direction.forward * 0;
+        }
+        else
+        {
+            moveDirection = Camera_Direction.right * inputMovement.x + Camera_Direction.forward * inputMovement.y;
+        }
+        
         rb.AddForce(moveDirection.normalized * moveSpeed * 10, ForceMode.Force);
     }
 
@@ -87,5 +132,14 @@ public class new_PlayerMovement : MonoBehaviour
         }
         
     }
+    public void Set_MoveBlock_Z(bool _MoveBlock_Z) { MoveBlock_Z = _MoveBlock_Z; MoveBlock_X = false; }
+    public void Set_MoveBlock_X(bool _MoveBlock_X) { MoveBlock_X = _MoveBlock_X; MoveBlock_Z = false; }
+
+    public void Set_Other_Direction(Transform _other_Direction) { other_Direction = _other_Direction; }
+
+    public void Set_OtherPlayerViewDirection(bool _otherPlayerViewDirection) { otherPlayerViewDirection = _otherPlayerViewDirection; }
+
+    public void Set_OtherViewDirection(Transform _otherViewDirection) { otherViewDirection = _otherViewDirection; }
+    public Transform Get_OtherViewDirection() { return otherViewDirection; }
 
 }

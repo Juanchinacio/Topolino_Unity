@@ -136,6 +136,7 @@ MonoBehaviour:
   ActualCooldownDuration: 0
   CooldownDuration: 10
   IsAvailable: 0
+  fire: {fileID: 5989539106106012954}
 --- !u!1 &310755736283329074
 GameObject:
   m_ObjectHideFlags: 0
@@ -148,6 +149,7 @@ GameObject:
   - component: {fileID: 310755736283329078}
   - component: {fileID: 310755736283329073}
   - component: {fileID: 310755736283329072}
+  - component: {fileID: 1642086626347557637}
   m_Layer: 0
   m_Name: Trigger_Cerillas
   m_TagString: Untagged
@@ -233,6 +235,19 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 1, y: 1, z: 1}
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!114 &1642086626347557637
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 310755736283329074}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8034ec6491eb2ae4f982725773290890, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  worldUI_E: {fileID: 2105395048329268283, guid: 409ef5412047b314b972a33a643fdd1d, type: 3}
 --- !u!1 &3693688876828991447
 GameObject:
   m_ObjectHideFlags: 0
@@ -342,6 +357,7 @@ GameObject:
   - component: {fileID: 4066020509804372142}
   - component: {fileID: 7462962978031930770}
   - component: {fileID: 7927109027694452759}
+  - component: {fileID: 3003608402788467471}
   m_Layer: 0
   m_Name: Trigger_Fuego
   m_TagString: Untagged
@@ -357,7 +373,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5989539106106012954}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: 0.512, y: 0, z: 0}
   m_LocalScale: {x: 0.5750777, y: 4.355319, z: 4.355319}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -427,3 +443,15 @@ SphereCollider:
   serializedVersion: 2
   m_Radius: 0.48
   m_Center: {x: 0, y: 0.000000029802322, z: 0}
+--- !u!114 &3003608402788467471
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5989539106106012954}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d97b59eae1a36644d9b28f3937ac85a7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
