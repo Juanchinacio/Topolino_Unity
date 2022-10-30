@@ -1,15 +1,5 @@
 {
   "dependencies": {
-    "com.peartreegames.blockyworldeditor": {
-      "version": "https://github.com/peartreegames/blocky-world-editor.git",
-      "depth": 0,
-      "source": "git",
-      "dependencies": {
-        "com.unity.modules.uielements": "0.1.0",
-        "com.unity.editorcoroutines": "1.0.0"
-      },
-      "hash": "d908dd46094ff1bed2e4ae7aa76871a85388080c"
-    },
     "com.unity.cinemachine": {
       "version": "2.8.9",
       "depth": 0,
