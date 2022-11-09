@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 8906721053338465988}
   - component: {fileID: 6665310759803388430}
   - component: {fileID: 5673233765897794064}
-  - component: {fileID: -8685211913000186881}
+  - component: {fileID: -29352696764818391}
   m_Layer: 0
   m_Name: cubeStone1 (1)
   m_TagString: Untagged
@@ -42,7 +42,7 @@ MeshFilter:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5151850390488359899}
-  m_Mesh: {fileID: -923820766556619652, guid: 6d135b7057ccc4d4fbf0fc6ed90f455b, type: 3}
+  m_Mesh: {fileID: -5495902117074765545, guid: 0443a9c6bca487841873e275f22f93fe, type: 3}
 --- !u!23 &6665310759803388430
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -99,7 +99,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   layer: {fileID: 11400000, guid: 716aefa8db3b3c745bae31e881aa1a65, type: 2}
   allowRandomRotation: 1
---- !u!65 &-8685211913000186881
+--- !u!65 &-29352696764818391
 BoxCollider:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -110,5 +110,5 @@ BoxCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 0.04, y: 0.009999998, z: 0.03999999}
+  m_Size: {x: 0.01, y: 0.009999998, z: 0.009999998}
   m_Center: {x: 0, y: 0, z: 0}

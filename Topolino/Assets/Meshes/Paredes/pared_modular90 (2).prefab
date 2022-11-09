@@ -97,7 +97,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 419c7d983c4047b5ab2542e2db285c31, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  layer: {fileID: 11400000, guid: 574deb1cec101f74da373712e798fb27, type: 2}
+  layer: {fileID: 0}
   allowRandomRotation: 0
 --- !u!65 &-5728060053232015940
 BoxCollider:
