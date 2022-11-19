@@ -2,7 +2,25 @@ fileFormatVersion: 2
 guid: b887493cdfcb73f4c81c31cab430e678
 ModelImporter:
   serializedVersion: 21300
-  internalIDToNameTable: []
+  internalIDToNameTable:
+  - first:
+      74: 2795501062269819568
+    second: antorcha|flame|flame|torche_fire_flameAction.001|flame|torche_fire_flame
+  - first:
+      74: -1128015188402691338
+    second: antorcha|flame|flame|torche_metallic_cleanAction|flame|torche_metallic_c
+  - first:
+      74: 1462044707642004216
+    second: antorcha|flame|flame|torche_wood_leatherAction|flame|torche_wood_leather
+  - first:
+      74: -2389901093255221013
+    second: antorcha|torch|torch|torche_fire_flameAction.001|torch|torche_fire_flame
+  - first:
+      74: 8331734865428932209
+    second: antorcha|torch|torch|torche_metallic_cleanAction|torch|torche_metallic_c
+  - first:
+      74: 8725058187348109792
+    second: antorcha|torch|torch|torche_wood_leatherAction|torch|torche_wood_leather
   externalObjects: {}
   materials:
     materialImportMode: 2

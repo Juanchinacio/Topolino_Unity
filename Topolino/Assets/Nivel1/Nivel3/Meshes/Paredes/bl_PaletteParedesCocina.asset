@@ -1,0 +1,19 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 839369e8ae584271aa171fc25aa744f5, type: 3}
+  m_Name: bl_PaletteParedesCocina
+  m_EditorClassIdentifier: 
+  blocks:
+  - {fileID: 4626768812381928401, guid: 811960f26eff1a04f8852f08fb5f1213, type: 3}
+  - {fileID: 76389586108094429, guid: 4247b2729e8dfc14a872178f959a15d2, type: 3}
+  - {fileID: 4455906541235654528, guid: b4867c2b7f732384f84b3917e948b322, type: 3}
+  - {fileID: 5793235746180206136, guid: a6202fc56ef2d674788488e2fb0aae6a, type: 3}
