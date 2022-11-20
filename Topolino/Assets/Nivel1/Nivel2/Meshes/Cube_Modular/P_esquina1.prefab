@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 8459250032820639779}
   - component: {fileID: -6641338197567529727}
   - component: {fileID: 7864510787065578659}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: P_esquina1
   m_TagString: Untagged
   m_Icon: {fileID: 0}

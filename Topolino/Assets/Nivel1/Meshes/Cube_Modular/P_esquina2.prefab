@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 1926581530628711324}
   - component: {fileID: 7080184400006103179}
   - component: {fileID: 6093803826787140001}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: P_esquina2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -63,7 +63,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 21c72414495cb1d4ca54913d3a1a9571, type: 2}
+  - {fileID: 2100000, guid: 388f1f0fb11e19c4b8758d9e011845ff, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0

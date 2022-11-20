@@ -53,6 +53,15 @@ public partial class @Controles : IInputActionCollection2, IDisposable
                     ""processors"": """",
                     ""interactions"": """",
                     ""initialStateCheck"": true
+                },
+                {
+                    ""name"": ""Pausa"",
+                    ""type"": ""Button"",
+                    ""id"": ""f07f5ebb-ce38-4c30-b41c-cec11e023cd6"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
                 }
             ],
             ""bindings"": [
@@ -165,6 +174,28 @@ public partial class @Controles : IInputActionCollection2, IDisposable
                     ""action"": ""Grab"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""3f76aed8-e884-41f5-b1b1-19277a11cd23"",
+                    ""path"": ""<Keyboard>/p"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Pausa"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""e007a120-728b-432e-9ba0-45a28ce58cf5"",
+                    ""path"": ""<Gamepad>/select"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Pausa"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
                 }
             ]
         }
@@ -176,6 +207,7 @@ public partial class @Controles : IInputActionCollection2, IDisposable
         m_Topolino_Jump = m_Topolino.FindAction("Jump", throwIfNotFound: true);
         m_Topolino_Movement = m_Topolino.FindAction("Movement", throwIfNotFound: true);
         m_Topolino_Grab = m_Topolino.FindAction("Grab", throwIfNotFound: true);
+        m_Topolino_Pausa = m_Topolino.FindAction("Pausa", throwIfNotFound: true);
     }
 
     public void Dispose()
@@ -238,6 +270,7 @@ public partial class @Controles : IInputActionCollection2, IDisposable
     private readonly InputAction m_Topolino_Jump;
     private readonly InputAction m_Topolino_Movement;
     private readonly InputAction m_Topolino_Grab;
+    private readonly InputAction m_Topolino_Pausa;
     public struct TopolinoActions
     {
         private @Controles m_Wrapper;
@@ -245,6 +278,7 @@ public partial class @Controles : IInputActionCollection2, IDisposable
         public InputAction @Jump => m_Wrapper.m_Topolino_Jump;
         public InputAction @Movement => m_Wrapper.m_Topolino_Movement;
         public InputAction @Grab => m_Wrapper.m_Topolino_Grab;
+        public InputAction @Pausa => m_Wrapper.m_Topolino_Pausa;
         public InputActionMap Get() { return m_Wrapper.m_Topolino; }
         public void Enable() { Get().Enable(); }
         public void Disable() { Get().Disable(); }
@@ -263,6 +297,9 @@ public partial class @Controles : IInputActionCollection2, IDisposable
                 @Grab.started -= m_Wrapper.m_TopolinoActionsCallbackInterface.OnGrab;
                 @Grab.performed -= m_Wrapper.m_TopolinoActionsCallbackInterface.OnGrab;
                 @Grab.canceled -= m_Wrapper.m_TopolinoActionsCallbackInterface.OnGrab;
+                @Pausa.started -= m_Wrapper.m_TopolinoActionsCallbackInterface.OnPausa;
+                @Pausa.performed -= m_Wrapper.m_TopolinoActionsCallbackInterface.OnPausa;
+                @Pausa.canceled -= m_Wrapper.m_TopolinoActionsCallbackInterface.OnPausa;
             }
             m_Wrapper.m_TopolinoActionsCallbackInterface = instance;
             if (instance != null)
@@ -276,6 +313,9 @@ public partial class @Controles : IInputActionCollection2, IDisposable
                 @Grab.started += instance.OnGrab;
                 @Grab.performed += instance.OnGrab;
                 @Grab.canceled += instance.OnGrab;
+                @Pausa.started += instance.OnPausa;
+                @Pausa.performed += instance.OnPausa;
+                @Pausa.canceled += instance.OnPausa;
             }
         }
     }
@@ -285,5 +325,6 @@ public partial class @Controles : IInputActionCollection2, IDisposable
         void OnJump(InputAction.CallbackContext context);
         void OnMovement(InputAction.CallbackContext context);
         void OnGrab(InputAction.CallbackContext context);
+        void OnPausa(InputAction.CallbackContext context);
     }
 }

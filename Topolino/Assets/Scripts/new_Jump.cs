@@ -129,7 +129,6 @@ public class new_Jump : MonoBehaviour
 
 
     }
-
     public void OnJump(InputValue value)
     {
         if (value.isPressed && onGround)

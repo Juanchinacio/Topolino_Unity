@@ -10,6 +10,12 @@
       },
       "hash": "a1c5b96ccef6acc8d55f2dc003ebc19272f72531"
     },
+    "com.unity.2d.sprite": {
+      "version": "1.0.0",
+      "depth": 0,
+      "source": "builtin",
+      "dependencies": {}
+    },
     "com.unity.cinemachine": {
       "version": "2.8.9",
       "depth": 0,
