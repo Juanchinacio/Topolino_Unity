@@ -39,7 +39,7 @@ public class plataformaMovil : MonoBehaviour
     {
         if (transform.position != nextWayPoint.position)
         {
-            puedoInteractuar = false;
+            //puedoInteractuar = false;
             transform.position = Vector3.MoveTowards(transform.position,nextWayPoint.position, velocidad * Time.deltaTime);
         }
         else if (interactuable == false)
@@ -56,29 +56,29 @@ public class plataformaMovil : MonoBehaviour
         }
         else
         {
-            puedoInteractuar = true;
+            //puedoInteractuar = true;
         }
         
     }
 
     public void AvanzarPosicion()
     {
-        if (puedoInteractuar == true)
-        {
+        //if (puedoInteractuar == true)
+        //{
             idx++;
             aux = Mathf.Abs(idx % wayPoints.Count);
             nextWayPoint = wayPoints[aux];
-        }
+        //}
     }
 
     public void RetrocederPosicion()
     {
-        if (puedoInteractuar == true)
-        {
+        //if (puedoInteractuar == true)
+        //{
             idx--;
             aux = Mathf.Abs(idx % wayPoints.Count);
             nextWayPoint = wayPoints[aux];
-        }  
+        //}  
     }
 
 }
