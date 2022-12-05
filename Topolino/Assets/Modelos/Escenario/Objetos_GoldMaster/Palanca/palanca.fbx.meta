@@ -3,7 +3,12 @@ guid: d38228ecf3189934eb23d3c1ca6cfa04
 ModelImporter:
   serializedVersion: 21300
   internalIDToNameTable: []
-  externalObjects: {}
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: M_Palanca
+    second: {fileID: 2100000, guid: bd967bd0fd3b1d540926c28c4bf168e4, type: 2}
   materials:
     materialImportMode: 2
     materialName: 0
