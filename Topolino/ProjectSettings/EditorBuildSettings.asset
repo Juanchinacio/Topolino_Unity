@@ -6,28 +6,22 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
-    path: Assets/Scenes/LevelSelector.unity
-    guid: f6fd37d317b77b745aac2bb434e0b237
+    path: Assets/Scenes/Niveles Beta/_MainScene.unity
+    guid: d249b6c07556ffa46a765963f689f0ac
   - enabled: 1
-    path: Assets/Scenes/Level1_Alcantarillas.unity
-    guid: b62402e084612f640a88c8803404ddfa
+    path: Assets/Scenes/Niveles Beta/Level1_Alcantarillas.unity
+    guid: 3a4f65cb4f3c78e4fb3ead07da3103c1
   - enabled: 1
-    path: Assets/Scenes/Player_Controler_Test_Scene.unity
-    guid: 3c45fd0c0d88c264696ac435101e39da
+    path: Assets/Scenes/Niveles Beta/Nivel4.unity
+    guid: e31e7771954120f48adf4e6dd4140811
   - enabled: 1
-    path: Assets/Scenes/SampleScene.unity
-    guid: 9fc0d4010bbf28b4594072e72b8655ab
+    path: Assets/Scenes/Niveles Beta/Nivel3.unity
+    guid: 7c1da33419a6bff459a30f357f48a1d2
   - enabled: 1
-    path: Assets/Scenes/Cajas.unity
-    guid: 2d790e4e076331846a093b0b96cdf2e0
+    path: Assets/Scenes/Niveles Beta/Nivel2.unity
+    guid: efcfab5e37bda394488f17c77edb3055
   - enabled: 1
-    path: Assets/Scenes/Cerillas.unity
-    guid: 43b7faa3d5ef1424d9052d833f98f27b
-  - enabled: 1
-    path: Assets/Scenes/Eventos.unity
-    guid: 96e56a3d4ed17104999b1641c4d97f6e
-  - enabled: 1
-    path: Assets/Scenes/Suelos.unity
-    guid: 4b983f44a8a6cdb42bf5ad706b09999b
+    path: Assets/Scenes/Niveles Beta/Menu.unity
+    guid: 29e51bb7b03ed984f87e8528fdf2a0f3
   m_configObjects:
     com.unity.input.settings: {fileID: 11400000, guid: fc5ca933e9d0bab458b11f9d9d9003b0, type: 2}

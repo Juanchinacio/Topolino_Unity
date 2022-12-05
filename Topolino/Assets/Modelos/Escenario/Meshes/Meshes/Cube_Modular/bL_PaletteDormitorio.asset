@@ -1,0 +1,20 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 839369e8ae584271aa171fc25aa744f5, type: 3}
+  m_Name: bL_PaletteDormitorio
+  m_EditorClassIdentifier: 
+  blocks:
+  - {fileID: 7967354963268292639, guid: 696889e2a95dc194b971314f261d3564, type: 3}
+  - {fileID: 7954965964709427702, guid: 78d3357594f711f4cbd0d742a65811bf, type: 3}
+  - {fileID: 125093370180420169, guid: 49f4c9f14d5a30b498bfebce7ae5ec2f, type: 3}
+  - {fileID: 5151850390488359899, guid: 152290322ee6074418162e7a90576623, type: 3}
+  - {fileID: 435500676762076117, guid: 23f49cbf6fda3fb468b500d76a0a7867, type: 3}
