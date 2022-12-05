@@ -3,7 +3,12 @@ guid: c33b2a78b71e66a4684d21fd03155bde
 ModelImporter:
   serializedVersion: 21300
   internalIDToNameTable: []
-  externalObjects: {}
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: M_Trampolin
+    second: {fileID: 2100000, guid: 5b62328e6776ebe42bb07e8dc2358027, type: 2}
   materials:
     materialImportMode: 2
     materialName: 0

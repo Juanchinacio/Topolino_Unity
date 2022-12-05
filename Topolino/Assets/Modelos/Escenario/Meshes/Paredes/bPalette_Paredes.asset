@@ -13,6 +13,5 @@ MonoBehaviour:
   m_Name: bPalette_Paredes
   m_EditorClassIdentifier: 
   blocks:
-  - {fileID: 4101158481947442120, guid: 8556aa8e1cb53c54f901cafc9033dded, type: 3}
-  - {fileID: 6959116759208457844, guid: 5ce78901714af4845992336c9300b7bf, type: 3}
-  - {fileID: 9018120610926996190, guid: 4c154f4e551b73946a54bd4aee87e921, type: 3}
+  - {fileID: 919132149155446097, guid: 0c53f7ec381f28a48ac4c615e0e21171, type: 3}
+  - {fileID: 919132149155446097, guid: 000c2b035d9399a42a94568ab75c92ce, type: 3}

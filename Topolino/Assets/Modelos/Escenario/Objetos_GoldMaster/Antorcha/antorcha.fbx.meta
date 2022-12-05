@@ -21,7 +21,17 @@ ModelImporter:
   - first:
       74: 8725058187348109792
     second: antorcha|torch|torch|torche_wood_leatherAction|torch|torche_wood_leather
-  externalObjects: {}
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: M_Antorcha
+    second: {fileID: 2100000, guid: 332032bcc0216b3438202a25f36dad02, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: M_AntorchaLlama
+    second: {fileID: 2100000, guid: 8038a77fbb2bf93459ac93a0e438e458, type: 2}
   materials:
     materialImportMode: 2
     materialName: 0
