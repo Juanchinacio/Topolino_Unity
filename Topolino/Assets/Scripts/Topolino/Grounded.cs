@@ -9,7 +9,29 @@ public class Grounded : MonoBehaviour
     public bool onGround;
     public string groundTag;
 
+    [Header("Animator")]
+    public Animator _animator;
+    private int _idJump;
+    private void Start()
+    {
+
+        _idJump = Animator.StringToHash("isJumping");
+    }
+
     void OnTriggerEnter(Collider other)
+    {
+        if (other.gameObject.layer == 6)
+        {
+            _animator.SetBool(_idJump, false);
+            onGround = true;
+            groundTag = other.gameObject.tag;
+        }
+        if (other.tag == "PlataformaMovil")
+        {
+            playerRoot.transform.parent = other.transform;
+        }
+    }
+    void OnTriggerStay(Collider other)
     {
         if (other.gameObject.layer == 6)
         {

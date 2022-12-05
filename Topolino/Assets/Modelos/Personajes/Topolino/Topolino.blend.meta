@@ -1,57 +1,84 @@
 fileFormatVersion: 2
-guid: 5054a16d56083124b95f29789a19f43d
+guid: 859ffa09e69284c4b9c9327243d173de
 ModelImporter:
   serializedVersion: 21300
   internalIDToNameTable:
   - first:
       74: -623603649343465320
-    second: Topolino_Tirar
+    second: Idle
   - first:
-      74: 457881899929999379
-    second: Topolino_Idle
+      74: -6607875480466925668
+    second: Idle with object on top of head
   - first:
-      74: 163946661222951639
-    second: Topolino_Idle_Object_Top
+      74: 5839954658536063138
+    second: Idle with object
   - first:
-      74: -2867762225416997021
-    second: Topolino_Idle_Object_Front
+      74: -1610863427237328480
+    second: Walking
   - first:
-      74: -1762091521222982064
-    second: Topolino_Walking
+      74: 5538735594545448449
+    second: Walking with object
   - first:
-      74: 1123765553479869685
-    second: Topolino_Walking_Object_Front
+      74: 8893796647784327821
+    second: Walking with object on top of head
   - first:
-      74: 96943370114488897
-    second: Topolino_Walking_Object_On_Top
+      74: -9121621101649706817
+    second: Running
   - first:
-      74: -1874617657048896041
-    second: Topolino_Running
+      74: -402010109302389988
+    second: Running with object
   - first:
-      74: 4252054958283613219
-    second: Topolino_Running_Object_Front
+      74: -5653849186721372896
+    second: Running with object on top of head
   - first:
-      74: -4516866512006963037
-    second: Topolino_Running_Object_Top
+      74: 1742679161841691293
+    second: Jumping
   - first:
-      74: -7969809443293760557
-    second: Topolino_Jumping
+      74: 5093953573406606515
+    second: Jumping with object
   - first:
-      74: 1043317805907335264
-    second: Topolino_Falling
+      74: 5161648601698471474
+    second: Jumping with object on top of head
   - first:
-      74: 8065570112327737163
-    second: Topolino_Interactuar
+      74: 3939263829162403130
+    second: Torch
   - first:
-      74: 802676431696279400
-    second: Topolino_Empujar
+      74: 927793716186838564
+    second: Push box
   - first:
-      74: -1158726129008117130
-    second: Scene (1)
+      74: 8522588671842704534
+    second: Pull box
+  externalObjects:
   - first:
-      74: 1586968171158998924
-    second: Topolino_Walking_Object_Top
-  externalObjects: {}
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Bigotes
+    second: {fileID: 2100000, guid: d617f18080adc394ea7568b4124d73e4, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Diente.001
+    second: {fileID: 2100000, guid: 943928fba4929ea4d8785c3a432313ca, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Jersey
+    second: {fileID: 2100000, guid: 86213971c8d6c5b48b0c55701ff2c6f1, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Mochila
+    second: {fileID: 2100000, guid: 7f416455297ba51459ff3a09d67cc272, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Ojos
+    second: {fileID: 2100000, guid: 17cfc68f0062ca8438240a161f273570, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Topolino
+    second: {fileID: 2100000, guid: e2493f6712b9d684a9cc3e7ac4b8e4eb, type: 2}
   materials:
     materialImportMode: 2
     materialName: 0
@@ -81,7 +108,7 @@ ModelImporter:
     extraUserProperties: []
     clipAnimations:
     - serializedVersion: 16
-      name: Topolino_Idle
+      name: Idle
       takeName: Scene
       internalID: 0
       firstFrame: 0
@@ -108,9 +135,9 @@ ModelImporter:
       transformMask: []
       maskType: 3
       maskSource: {instanceID: 0}
-      additiveReferencePoseFrame: 530
+      additiveReferencePoseFrame: 0
     - serializedVersion: 16
-      name: Topolino_Idle_Object_Top
+      name: Idle with object on top of head
       takeName: Scene
       internalID: 0
       firstFrame: 50
@@ -139,7 +166,7 @@ ModelImporter:
       maskSource: {instanceID: 0}
       additiveReferencePoseFrame: 0
     - serializedVersion: 16
-      name: Topolino_Idle_Object_Front
+      name: Idle with object
       takeName: Scene
       internalID: 0
       firstFrame: 100
@@ -168,7 +195,7 @@ ModelImporter:
       maskSource: {instanceID: 0}
       additiveReferencePoseFrame: 0
     - serializedVersion: 16
-      name: Topolino_Walking
+      name: Walking
       takeName: Scene
       internalID: 0
       firstFrame: 150
@@ -197,7 +224,7 @@ ModelImporter:
       maskSource: {instanceID: 0}
       additiveReferencePoseFrame: 0
     - serializedVersion: 16
-      name: Topolino_Walking_Object_Front
+      name: Walking with object
       takeName: Scene
       internalID: 0
       firstFrame: 180
@@ -226,7 +253,7 @@ ModelImporter:
       maskSource: {instanceID: 0}
       additiveReferencePoseFrame: 0
     - serializedVersion: 16
-      name: Topolino_Walking_Object_Top
+      name: Walking with object on top of head
       takeName: Scene
       internalID: 0
       firstFrame: 210
@@ -255,7 +282,7 @@ ModelImporter:
       maskSource: {instanceID: 0}
       additiveReferencePoseFrame: 0
     - serializedVersion: 16
-      name: Topolino_Running
+      name: Running
       takeName: Scene
       internalID: 0
       firstFrame: 240
@@ -284,7 +311,7 @@ ModelImporter:
       maskSource: {instanceID: 0}
       additiveReferencePoseFrame: 0
     - serializedVersion: 16
-      name: Topolino_Running_Object_Front
+      name: Running with object
       takeName: Scene
       internalID: 0
       firstFrame: 270
@@ -313,7 +340,7 @@ ModelImporter:
       maskSource: {instanceID: 0}
       additiveReferencePoseFrame: 0
     - serializedVersion: 16
-      name: Topolino_Running_Object_Top
+      name: Running with object on top of head
       takeName: Scene
       internalID: 0
       firstFrame: 300
@@ -342,39 +369,10 @@ ModelImporter:
       maskSource: {instanceID: 0}
       additiveReferencePoseFrame: 0
     - serializedVersion: 16
-      name: Topolino_Jumping
+      name: Jumping
       takeName: Scene
       internalID: 0
-      firstFrame: 338
-      lastFrame: 348
-      wrapMode: 0
-      orientationOffsetY: 0
-      level: 0
-      cycleOffset: 0
-      loop: 0
-      hasAdditiveReferencePose: 0
-      loopTime: 1
-      loopBlend: 1
-      loopBlendOrientation: 0
-      loopBlendPositionY: 0
-      loopBlendPositionXZ: 0
-      keepOriginalOrientation: 0
-      keepOriginalPositionY: 1
-      keepOriginalPositionXZ: 0
-      heightFromFeet: 0
-      mirror: 0
-      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
-      curves: []
-      events: []
-      transformMask: []
-      maskType: 3
-      maskSource: {instanceID: 0}
-      additiveReferencePoseFrame: 0
-    - serializedVersion: 16
-      name: Topolino_Falling
-      takeName: Scene
-      internalID: 0
-      firstFrame: 343
+      firstFrame: 330
       lastFrame: 358
       wrapMode: 0
       orientationOffsetY: 0
@@ -382,7 +380,7 @@ ModelImporter:
       cycleOffset: 0
       loop: 0
       hasAdditiveReferencePose: 0
-      loopTime: 1
+      loopTime: 0
       loopBlend: 0
       loopBlendOrientation: 0
       loopBlendPositionY: 0
@@ -400,7 +398,65 @@ ModelImporter:
       maskSource: {instanceID: 0}
       additiveReferencePoseFrame: 0
     - serializedVersion: 16
-      name: Topolino_Interactuar
+      name: Jumping with object
+      takeName: Scene
+      internalID: 0
+      firstFrame: 365
+      lastFrame: 393
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      hasAdditiveReferencePose: 0
+      loopTime: 0
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask: []
+      maskType: 3
+      maskSource: {instanceID: 0}
+      additiveReferencePoseFrame: 0
+    - serializedVersion: 16
+      name: Jumping with object on top of head
+      takeName: Scene
+      internalID: 0
+      firstFrame: 400
+      lastFrame: 428
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      hasAdditiveReferencePose: 0
+      loopTime: 0
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask: []
+      maskType: 3
+      maskSource: {instanceID: 0}
+      additiveReferencePoseFrame: 0
+    - serializedVersion: 16
+      name: Torch
       takeName: Scene
       internalID: 0
       firstFrame: 430
@@ -429,7 +485,7 @@ ModelImporter:
       maskSource: {instanceID: 0}
       additiveReferencePoseFrame: 0
     - serializedVersion: 16
-      name: Topolino_Empujar
+      name: Push box
       takeName: Scene
       internalID: 0
       firstFrame: 480
@@ -458,7 +514,7 @@ ModelImporter:
       maskSource: {instanceID: 0}
       additiveReferencePoseFrame: 0
     - serializedVersion: 16
-      name: Topolino_Tirar
+      name: Pull box
       takeName: Scene
       internalID: 0
       firstFrame: 530
@@ -489,15 +545,15 @@ ModelImporter:
     isReadable: 0
   meshes:
     lODScreenPercentages: []
-    globalScale: 2
+    globalScale: 1
     meshCompression: 0
     addColliders: 0
     useSRGBMaterialColor: 1
     sortHierarchyByName: 1
-    importVisibility: 1
+    importVisibility: 0
     importBlendShapes: 1
     importCameras: 0
-    importLights: 0
+    importLights: 1
     nodeNameCollisionStrategy: 1
     fileIdsGeneration: 2
     swapUVChannels: 0
@@ -542,7 +598,7 @@ ModelImporter:
     armStretch: 0.05
     legStretch: 0.05
     feetSpacing: 0
-    globalScale: 2
+    globalScale: 1
     rootMotionBoneName: 
     hasTranslationDoF: 0
     hasExtraRoot: 0

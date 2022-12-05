@@ -16,7 +16,7 @@ public class new_PlayerMovement : MonoBehaviour
     [Header("Ground Checker")]
     public LayerMask whatIsGround;
     public Grounded groundChecker;
-    
+
 
     [Header("Transforms")]
     public Transform Camera_Direction;
@@ -25,14 +25,20 @@ public class new_PlayerMovement : MonoBehaviour
     public Transform cameraTransform;   // Para que la direccion rote hacia donde mira la camara
     Transform other_Direction;
 
+
+
     [Header("Debug")]
     public bool MoveBlock_Z = false;
     public bool MoveBlock_X = false;
     public bool otherPlayerViewDirection = false;
     public Transform otherViewDirection;
+    public bool grounded;
+
+    [Header("Animator")]
+    public Animator _animator;
+    private int _idRun;
 
     Rigidbody rb;
-    public bool grounded;
     Vector2 inputMovement;
 
     void Start()
@@ -40,6 +46,10 @@ public class new_PlayerMovement : MonoBehaviour
         //cameraTransform = Camera.main.transform;
         rb = transform.GetComponent<Rigidbody>();
         //groundChecker = GetComponent<Grounded>();
+
+        _idRun = Animator.StringToHash("isRunning");
+
+
     }
     void Update()
     {
@@ -81,7 +91,7 @@ public class new_PlayerMovement : MonoBehaviour
         {
             player_Direction.LookAt(new Vector3(otherViewDirection.position.x, player_Direction.position.y, otherViewDirection.position.z));
         }
-        
+
 
 
         // Rotar el modelo del jugador
@@ -118,7 +128,12 @@ public class new_PlayerMovement : MonoBehaviour
         {
             moveDirection = Camera_Direction.right * inputMovement.x + Camera_Direction.forward * inputMovement.y;
         }
-        
+
+        if (moveDirection != Vector3.zero)
+            _animator.SetBool(_idRun, true);
+        else
+            _animator.SetBool(_idRun, false);
+
         rb.AddForce(moveDirection.normalized * moveSpeed * 10, ForceMode.Force);
     }
 
@@ -130,7 +145,7 @@ public class new_PlayerMovement : MonoBehaviour
             Vector3 limitedVel = flatVel.normalized * moveSpeed;
             rb.velocity = new Vector3(limitedVel.x, rb.velocity.y, limitedVel.z);
         }
-        
+
     }
     public void Set_MoveBlock_Z(bool _MoveBlock_Z) { MoveBlock_Z = _MoveBlock_Z; MoveBlock_X = false; }
     public void Set_MoveBlock_X(bool _MoveBlock_X) { MoveBlock_X = _MoveBlock_X; MoveBlock_Z = false; }
