@@ -1,4 +1,4 @@
- using System.Collections;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.InputSystem;
@@ -18,11 +18,16 @@ public class PickObject : MonoBehaviour
     public List<Collider> Objetos;
     public bool llevandoObjeto = false;
 
+    [Header("Animator")]
+    public Animator _animator;
+    private int _idHold;
 
     private void Start()
     {
         top_Object_Transform = top_Object.transform;
         front_Object_Transform = front_Object.transform;
+
+        _idHold = Animator.StringToHash("isHolding");
     }
 
     public void OnGrab(InputValue value)
@@ -54,13 +59,14 @@ public class PickObject : MonoBehaviour
         objetoCogido.transform.GetComponent<Rigidbody>().isKinematic = false;
         //this.GetComponent<SpringJoint>().connectedBody = null;
 
+        _animator.SetBool(_idHold, false);
     }
 
     public void CogerObjeto()
     {
         Debug.Log("Coger objeto");
 
-        
+
 
         llevandoObjeto = true;
 
@@ -75,7 +81,7 @@ public class PickObject : MonoBehaviour
             // Hacer al objeto hijo del "jugador"
             objetoCogido.transform.parent = top_Object.transform;
         }
-        
+
         // Dependiedo del tag, el objeto es cogido arriba o enfrente
         if (objetoCogido.gameObject.CompareTag("Object(Top)"))
         {
@@ -96,6 +102,8 @@ public class PickObject : MonoBehaviour
             ////this.GetComponent<SpringJoint>().connectedBody = objetoCogido.gameObject.GetComponent<Rigidbody>();
             this.GetComponent<SpringJoint>().connectedBody = objetoCogido.gameObject.GetComponent<Rigidbody>();
         }
+
+        _animator.SetBool(_idHold, true);
 
     }
 }

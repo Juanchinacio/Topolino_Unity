@@ -6,7 +6,7 @@ using UnityEngine.InputSystem;
 public class new_Jump : MonoBehaviour
 {
 
-    
+
     [Header("Jump Settings")]
     public float jumpHeight = 5;
     public float jumpBuffer = .15f;
@@ -21,7 +21,7 @@ public class new_Jump : MonoBehaviour
     [Header("Ground Checker")]
     public Grounded groundChecker;
     public bool onGround;
-    
+
     [Header("Debug")]
     public bool canJump = true;
     public bool desiredJump;
@@ -36,8 +36,8 @@ public class new_Jump : MonoBehaviour
     public Animator _animator;
     private int _idJump;
 
-    Rigidbody rb;  
-    
+    Rigidbody rb;
+
 
 
     void Start()
@@ -64,15 +64,15 @@ public class new_Jump : MonoBehaviour
 
     public void Jump()
     {
-            Debug.Log("Saltar");
-            jumpForce = Mathf.Sqrt(jumpHeight * -2 * (Physics.gravity.y * actualGravityScale));
+        Debug.Log("Saltar");
+        jumpForce = Mathf.Sqrt(jumpHeight * -2 * (Physics.gravity.y * actualGravityScale));
 
-            _animator.SetBool(_idJump, true);
+        _animator.SetBool(_idJump, true);
 
-            rb.AddForce(new Vector3(0, jumpForce, 0), ForceMode.Impulse);
+        rb.AddForce(new Vector3(0, jumpForce, 0), ForceMode.Impulse);
 
-            jumping = true;
-            desiredJump = false;
+        jumping = true;
+        desiredJump = false;
     }
 
     public bool Get_canJump() { return canJump; }
