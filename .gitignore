@@ -63,3 +63,5 @@ crashlytics-build.properties
 Topolino/UserSettings/Layouts/default-2021.dwlt
 Topolino/Assets/Scenes/SampleScene.unity
 *.dwlt
+Topolino/UserSettings/EditorUserSettings.asset
+Topolino/UserSettings/Layouts/default-2021.dwlt
