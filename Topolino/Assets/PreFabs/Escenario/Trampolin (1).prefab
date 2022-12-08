@@ -25,15 +25,15 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5887300335176983365}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -19.4, y: 0.83, z: -27.88}
+  m_LocalRotation: {x: -0, y: -0.03131135, z: -0, w: 0.99950975}
+  m_LocalPosition: {x: -19.398771, y: 0.83, z: -27.880013}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 6213099463061814311}
   m_Father: {fileID: 0}
   m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: -3.589, z: 0}
 --- !u!65 &5887300335176983367
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -45,8 +45,8 @@ BoxCollider:
   m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 1.8890457, y: 1.2458007, z: 1.8765175}
-  m_Center: {x: -0.29444885, y: 0.6339358, z: -0.43825877}
+  m_Size: {x: 1.5564728, y: 2.9013767, z: 2.0860195}
+  m_Center: {x: -0.019111633, y: 0.45068836, z: 0.016695976}
 --- !u!114 &5887300335176983364
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -73,15 +73,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 60ce9a70c5fb50c47a70e348d4bf8e3a, type: 3}
       propertyPath: m_LocalScale.x
-      value: 206.06999
+      value: 100
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 60ce9a70c5fb50c47a70e348d4bf8e3a, type: 3}
       propertyPath: m_LocalScale.y
-      value: 206.06999
+      value: 100
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 60ce9a70c5fb50c47a70e348d4bf8e3a, type: 3}
       propertyPath: m_LocalScale.z
-      value: 206.06999
+      value: 11
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 60ce9a70c5fb50c47a70e348d4bf8e3a, type: 3}
       propertyPath: m_LocalPosition.x
@@ -123,6 +123,14 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: -85.175
       objectReference: {fileID: 0}
+    - target: {fileID: -7511558181221131132, guid: 60ce9a70c5fb50c47a70e348d4bf8e3a, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 5b62328e6776ebe42bb07e8dc2358027, type: 2}
+    - target: {fileID: -5754084199372789682, guid: 60ce9a70c5fb50c47a70e348d4bf8e3a, type: 3}
+      propertyPath: m_Mesh
+      value: 
+      objectReference: {fileID: -1585528626514975986, guid: c33b2a78b71e66a4684d21fd03155bde, type: 3}
     - target: {fileID: 919132149155446097, guid: 60ce9a70c5fb50c47a70e348d4bf8e3a, type: 3}
       propertyPath: m_Name
       value: trampolin
