@@ -7,8 +7,14 @@ public class cartel : MonoBehaviour
     public GameObject cartelesController;
     public string textoCartel;
 
-    public void mostrarCartel()
+
+    private void Start()
     {
+        cartelesController = GameObject.Find("Controlador Carteles");
+    }
+
+    public void mostrarCartel()
+    {  
         cartelesController.GetComponent<cartelesController>().ActivarUI();
         cartelesController.GetComponent<cartelesController>().MostarTexto(textoCartel);
     }

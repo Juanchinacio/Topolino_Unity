@@ -8,11 +8,27 @@ public class tiemposNiveles : MonoBehaviour
     public int idNivel;
     float tiempo = 0;
     public TMP_Text indicadorTiempo;
+    public bool pausado = false;
 
     public void Update()
     {
-        tiempo += Time.deltaTime;
-        indicadorTiempo.text = tiempo + " s";
+        if (pausado == false)
+            tiempo += Time.deltaTime;
+
+        System.TimeSpan t = System.TimeSpan.FromSeconds(tiempo);
+        string niceTime = string.Format("{0:00}:{1:00}:{2:00}", t.Minutes, t.Seconds, t.Milliseconds);
+
+        indicadorTiempo.text = niceTime;
+    }
+
+    public void pausarCronometro()
+    {
+        pausado = true;
+    }
+
+    public void reaudarCronometro()
+    {
+        pausado = false;
     }
 
     public void GuardarTiempo()
@@ -23,10 +39,5 @@ public class tiemposNiveles : MonoBehaviour
         {
             PlayerPrefs.SetInt(aux, (int)tiempo);
         }
-        else
-        {
-
-        }
-        
     }
 }

@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 455304178}
   - component: {fileID: 455304177}
   m_Layer: 5
-  m_Name: Text (TMP)
+  m_Name: Cronometro
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -468,7 +468,7 @@ GameObject:
   - component: {fileID: 2045504821742495572}
   - component: {fileID: 2045504821742495573}
   m_Layer: 5
-  m_Name: Image
+  m_Name: Joystick
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1067,7 +1067,7 @@ GameObject:
   - component: {fileID: 2911193165737794263}
   - component: {fileID: 5319585406617253929}
   m_Layer: 5
-  m_Name: Saltar (1)
+  m_Name: Pausa
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

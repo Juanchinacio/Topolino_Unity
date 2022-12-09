@@ -138,7 +138,7 @@ GameObject:
   - component: {fileID: 6462994685241048887}
   - component: {fileID: 6462994685241048886}
   m_Layer: 6
-  m_Name: PlataformaMovil
+  m_Name: PlataformaMovil_4 puntos
   m_TagString: PlataformaMovil
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

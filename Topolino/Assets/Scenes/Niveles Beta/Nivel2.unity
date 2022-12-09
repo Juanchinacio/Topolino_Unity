@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 0.831
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.34909582, g: 0.42932257, b: 0.5635683, a: 0.831}
+  m_IndirectSpecularColor: {r: 0.34977308, g: 0.43000174, b: 0.5643185, a: 0.831}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -17408,7 +17408,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 765838956}
-  m_LocalRotation: {x: 0.46664158, y: -0.16217399, z: 0.08748411, w: 0.86503863}
+  m_LocalRotation: {x: 0.4666416, y: -0.16217397, z: 0.08748409, w: 0.86503863}
   m_LocalPosition: {x: 0, y: 9.48, z: -67.69}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -20697,7 +20697,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 947603088}
-  m_LocalRotation: {x: 0.46664158, y: -0.16217399, z: 0.08748411, w: 0.86503863}
+  m_LocalRotation: {x: 0.4666416, y: -0.16217397, z: 0.08748409, w: 0.86503863}
   m_LocalPosition: {x: 0, y: 9.48, z: -67.69}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -37561,6 +37561,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   idNivel: 2
   indicadorTiempo: {fileID: 1574069127}
+  pausado: 0
 --- !u!1001 &1731646455
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -46383,18 +46384,10 @@ PrefabInstance:
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
       objectReference: {fileID: 2077293755}
-    - target: {fileID: 6044729710287690309, guid: 2bbfbc4a58c760945a637728b5c74a18, type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
-      value: volverMenu
-      objectReference: {fileID: 0}
     - target: {fileID: 6044729711582885518, guid: 2bbfbc4a58c760945a637728b5c74a18, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
       objectReference: {fileID: 2077293755}
-    - target: {fileID: 6044729711582885518, guid: 2bbfbc4a58c760945a637728b5c74a18, type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
-      value: cerrarPausa
-      objectReference: {fileID: 0}
     - target: {fileID: 8255319202442143738, guid: 2bbfbc4a58c760945a637728b5c74a18, type: 3}
       propertyPath: m_Name
       value: Canvas_Pausa
