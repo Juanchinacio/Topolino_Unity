@@ -21,6 +21,24 @@ ModelImporter:
   - first:
       74: 8725058187348109792
     second: antorcha|torch|torch|torche_wood_leatherAction|torch|torche_wood_leather
+  - first:
+      74: -5701214719005022686
+    second: antorcha|antorcha|antorcha|flame|flame|torche_fire_flameAction.001|flame
+  - first:
+      74: -5429108057028188758
+    second: antorcha|antorcha|antorcha|flame|flame|torche_metallic_cleanAction|flame
+  - first:
+      74: 8259592362620490825
+    second: antorcha|antorcha|antorcha|flame|flame|torche_wood_leatherAction|flame|t
+  - first:
+      74: 1921981660625693230
+    second: antorcha|antorcha|antorcha|torch|torch|torche_fire_flameAction.001|torch
+  - first:
+      74: 9102167704097727869
+    second: antorcha|antorcha|antorcha|torch|torch|torche_metallic_cleanAction|torch
+  - first:
+      74: 1382315919152923571
+    second: antorcha|antorcha|antorcha|torch|torch|torche_wood_leatherAction|torch|t
   externalObjects:
   - first:
       type: UnityEngine:Material
@@ -116,7 +134,7 @@ ModelImporter:
     armStretch: 0.05
     legStretch: 0.05
     feetSpacing: 0
-    globalScale: 0.03
+    globalScale: 3
     rootMotionBoneName: 
     hasTranslationDoF: 0
     hasExtraRoot: 0
