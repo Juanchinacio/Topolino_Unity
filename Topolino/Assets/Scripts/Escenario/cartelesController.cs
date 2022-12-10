@@ -7,6 +7,7 @@ public class cartelesController : MonoBehaviour
 {
     public GameObject UI;
     public TMP_Text recuadroTextoUI;
+    public bool escribiendo = false;
 
     public void ActivarUI()
     {
@@ -24,11 +25,17 @@ public class cartelesController : MonoBehaviour
 
     IEnumerator Escribir(string _mensaje)
     {
-        recuadroTextoUI.text = "";
-        foreach (char caracter in _mensaje.ToCharArray())
+        if (escribiendo == false)
         {
-            recuadroTextoUI.text += caracter;
-            yield return new WaitForSeconds(0.08f);
+            escribiendo = true;
+            recuadroTextoUI.text = "";
+            foreach (char caracter in _mensaje.ToCharArray())
+            {
+                recuadroTextoUI.text += caracter;
+                yield return new WaitForSeconds(0.08f);
+            }
+            escribiendo = false;
         }
+        
     }
 }

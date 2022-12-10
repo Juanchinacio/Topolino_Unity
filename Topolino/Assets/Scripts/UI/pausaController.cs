@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
@@ -10,14 +11,18 @@ public class pausaController : MonoBehaviour
 
     public Button buttom_volverMenu;
     public Button buttom_cerrarPausa;
+    public tiemposNiveles tiemposNiveles;
 
     
+    
+
     public void OnPausa(InputValue value)
     {
         if (activado == false)
         {
             pausa.SetActive(true);
             activado = true;
+            tiemposNiveles.pausarCronometro();
         }
         
     }
@@ -25,15 +30,19 @@ public class pausaController : MonoBehaviour
     public void volverMenu()
     {
         GameManager.manager.LoadScene(0);
+        
     }
     public void cerrarPausa()
     {
+        tiemposNiveles.reaudarCronometro();
         pausa.SetActive(false);
         activado = false;
     }
 
     private void Start()
     {
+        tiemposNiveles = GameObject.Find("Controlador Tiempo").GetComponent<tiemposNiveles>();
+
         pausa.SetActive(false);
     }
 }

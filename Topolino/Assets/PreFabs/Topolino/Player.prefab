@@ -60,7 +60,8 @@ GameObject:
   - component: {fileID: 65024091269720476}
   - component: {fileID: 65024091269720467}
   - component: {fileID: 65024091269720466}
-  m_Layer: 8
+  - component: {fileID: 4680646267741551656}
+  m_Layer: 7
   m_Name: Player_Colliders
   m_TagString: Player
   m_Icon: {fileID: 0}
@@ -146,6 +147,22 @@ CapsuleCollider:
   m_Height: 2
   m_Direction: 1
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!114 &4680646267741551656
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 65024091269720464}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1f2b997d4379e7d419f63c581ed739ae, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  numVidas: 5
+  jugador: {fileID: 65024092033250472}
+  numVidasText: {fileID: 0}
+  ultimo_Checkpoint: {x: 0, y: 0, z: 0}
 --- !u!1 &65024091426660195
 GameObject:
   m_ObjectHideFlags: 0
@@ -169,14 +186,14 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 65024091426660195}
-  m_LocalRotation: {x: -0, y: -0, z: 0.7071068, w: 0.7071068}
-  m_LocalPosition: {x: 0.6300001, y: 0, z: 0.48999977}
+  m_LocalRotation: {x: 0, y: 0, z: 1, w: 0}
+  m_LocalPosition: {x: 0.6300001, y: 0.661, z: 0.363}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 65024092630108007}
   m_RootOrder: 3
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 90}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 180}
 --- !u!1 &65024091578610677
 GameObject:
   m_ObjectHideFlags: 0
@@ -308,9 +325,10 @@ GameObject:
   - component: {fileID: 65024092033250482}
   - component: {fileID: 1710680663}
   - component: {fileID: 1791685882283041485}
+  - component: {fileID: 2080242717068664585}
   m_Layer: 8
   m_Name: Player
-  m_TagString: Untagged
+  m_TagString: trampolin
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -379,7 +397,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d191d7115f771644187374da389c76a3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  jumpHeight: 4
+  jumpHeight: 5
   jumpBuffer: 1
   coyoteTime: 1
   buttonTime: 0.5
@@ -557,6 +575,20 @@ MonoBehaviour:
   pausa: {fileID: 0}
   buttom_volverMenu: {fileID: 0}
   buttom_cerrarPausa: {fileID: 0}
+--- !u!136 &2080242717068664585
+CapsuleCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 65024092033250472}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  m_Radius: 0.5
+  m_Height: 1.6226815
+  m_Direction: 1
+  m_Center: {x: 0, y: -0.021087348, z: 0}
 --- !u!1 &65024092370243395
 GameObject:
   m_ObjectHideFlags: 0

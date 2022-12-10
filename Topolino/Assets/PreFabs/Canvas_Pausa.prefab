@@ -204,6 +204,26 @@ PrefabInstance:
       propertyPath: m_sharedMaterial
       value: 
       objectReference: {fileID: 7633211847067286124, guid: 114e960d2c7877840a8d1bb95f2ed850, type: 2}
+    - target: {fileID: 2410543687146656037, guid: 08e629a7635cbd24c904d4af4fd4fc57, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: -0.1015625
+      objectReference: {fileID: 0}
+    - target: {fileID: 2410543687146656037, guid: 08e629a7635cbd24c904d4af4fd4fc57, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 0.40234375
+      objectReference: {fileID: 0}
+    - target: {fileID: 2410543687156660772, guid: 08e629a7635cbd24c904d4af4fd4fc57, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 0.00048828125
+      objectReference: {fileID: 0}
+    - target: {fileID: 2410543687504594436, guid: 08e629a7635cbd24c904d4af4fd4fc57, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: -0.10058594
+      objectReference: {fileID: 0}
+    - target: {fileID: 2410543687594228262, guid: 08e629a7635cbd24c904d4af4fd4fc57, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 2410543688120286103, guid: 08e629a7635cbd24c904d4af4fd4fc57, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 

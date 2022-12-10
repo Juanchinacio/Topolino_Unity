@@ -12,15 +12,18 @@ public class plataformaMovil : MonoBehaviour
     public int idx = 0;
     public int aux;
 
+    public GameObject plataforma;
+
     void Awake()
     {
+        plataforma = transform.GetChild(0).gameObject;
         // Guardar todos los wayPoints
-        for (int i = 0; i < transform.childCount; i++)
+        for (int i = 1; i < transform.childCount; i++)
         {
             wayPoints.Add(transform.GetChild(i).transform);
         }
         // Los way point no son hijos de la plataforma
-        transform.DetachChildren();
+        //transform.DetachChildren();
 
         if (wayPoints.Count > 0)
         {
@@ -37,10 +40,10 @@ public class plataformaMovil : MonoBehaviour
 
     void Update()
     {
-        if (transform.position != nextWayPoint.position)
+        if (plataforma.transform.position != nextWayPoint.position)
         {
             //puedoInteractuar = false;
-            transform.position = Vector3.MoveTowards(transform.position,nextWayPoint.position, velocidad * Time.deltaTime);
+            plataforma.transform.position = Vector3.MoveTowards(plataforma.transform.position,nextWayPoint.position, velocidad * Time.deltaTime);
         }
         else if (interactuable == false)
         {
@@ -63,22 +66,24 @@ public class plataformaMovil : MonoBehaviour
 
     public void AvanzarPosicion()
     {
-        //if (puedoInteractuar == true)
-        //{
-            idx++;
-            aux = Mathf.Abs(idx % wayPoints.Count);
-            nextWayPoint = wayPoints[aux];
-        //}
+        nextWayPoint = wayPoints[0];
+        ////if (puedoInteractuar == true)
+        ////{
+        //    idx++;
+        //    aux = Mathf.Abs(idx % wayPoints.Count);
+        //    nextWayPoint = wayPoints[aux];
+        ////}
     }
 
     public void RetrocederPosicion()
     {
-        //if (puedoInteractuar == true)
-        //{
-            idx--;
-            aux = Mathf.Abs(idx % wayPoints.Count);
-            nextWayPoint = wayPoints[aux];
-        //}  
+        nextWayPoint = wayPoints[1];
+        ////if (puedoInteractuar == true)
+        ////{
+        //    idx--;
+        //    aux = Mathf.Abs(idx % wayPoints.Count);
+        //    nextWayPoint = wayPoints[aux];
+        ////}  
     }
 
 }

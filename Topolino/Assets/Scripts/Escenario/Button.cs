@@ -18,48 +18,54 @@ public class Button : MonoBehaviour
     private void OnTriggerEnter(Collider other)
     {
         // Comprobar si pertenece a la LAYER GameObjects
-        if (other.gameObject.layer != 7){}
-
-        contador++;
-        if (contador == 1)
+        if (other.gameObject.layer == 7)
         {
-            // Ejecutar animacion ButtonRelease
-            animaciones.Play("Presion");
-            // Llamar a evento
-            if (activaccion != null)
+            contador++;
+            if (contador == 1)
             {
-                Debug.Log("Invoco Evento");
-                activaccion.Invoke();
+                // Ejecutar animacion ButtonRelease
+                animaciones.Play("Presion");
+                // Llamar a evento
+                if (activaccion != null)
+                {
+                    Debug.Log("Invoco Evento");
+                    activaccion.Invoke();
+                }
+                else
+                {
+                    Debug.Log("No hay evento de activacion asociado");
+                }
+                //
+                Debug.Log("Boton presionado (1 objeto)");
             }
-            else
-            {
-                Debug.Log("No hay evento de activacion asociado");
-            }
-            //
-            Debug.Log("Boton presionado (1 objeto)");
         }
+
+        
     }
     private void OnTriggerExit(Collider other)
     {
         // Comprobar si pertenece a la LAYER GameObjects
-        if (other.gameObject.layer != 7) { }
-
-        contador--;
-        if (contador == 0)
+        if (other.gameObject.layer == 7)
         {
-            // Ejecutar animacion ButtonRealease
-            animaciones.Play("DesPresion");
-            // Desactivar evento
-            if (activaccion != null)
+            contador--;
+            if (contador == 0)
             {
-                desactivaccion.Invoke();
+                // Ejecutar animacion ButtonRealease
+                animaciones.Play("DesPresion");
+                // Desactivar evento
+                if (activaccion != null)
+                {
+                    desactivaccion.Invoke();
+                }
+                else
+                {
+                    Debug.Log("No hay evento de desactivacion asociado");
+                }
+                //
+                Debug.Log("Boton NO presionado (0 objeto)");
             }
-            else
-            {
-                Debug.Log("No hay evento de desactivacion asociado");
-            }
-            //
-            Debug.Log("Boton NO presionado (0 objeto)");
         }
+
+        
     }
 }
