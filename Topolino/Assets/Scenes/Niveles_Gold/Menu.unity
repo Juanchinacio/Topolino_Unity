@@ -2580,9 +2580,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   botonJugar: {fileID: 0}
-  tiempoBronce: 180
-  tiempoPlata: 120
-  tiempoOro: 60
+  tiempoBronce: 345
+  tiempoPlata: 272
+  tiempoOro: 234
   mejorTiempo: 300
   nombreNivel: Nivel 3
   idiceNivel: 3
@@ -10160,9 +10160,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   botonJugar: {fileID: 0}
-  tiempoBronce: 180
-  tiempoPlata: 120
-  tiempoOro: 60
+  tiempoBronce: 275
+  tiempoPlata: 210
+  tiempoOro: 173
   mejorTiempo: 300
   nombreNivel: Nivel 2
   idiceNivel: 2
@@ -13055,10 +13055,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   botonJugar: {fileID: 0}
-  tiempoBronce: 180
-  tiempoPlata: 120
-  tiempoOro: 60
-  mejorTiempo: 300
+  tiempoBronce: 350
+  tiempoPlata: 300
+  tiempoOro: 265
+  mejorTiempo: 0
   nombreNivel: Nivel 1
   idiceNivel: 1
   medallaBronce: {fileID: 1658752905}

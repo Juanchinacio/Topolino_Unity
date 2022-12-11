@@ -43,12 +43,22 @@ public class levelContent : MonoBehaviour
                 medallaOro.SetActive(true);
             }
         }
-        
+        System.TimeSpan t_bronce = System.TimeSpan.FromSeconds(tiempoBronce);
+        System.TimeSpan t_Plata = System.TimeSpan.FromSeconds(tiempoPlata);
+        System.TimeSpan t_Oro = System.TimeSpan.FromSeconds(tiempoOro);
+        System.TimeSpan t_MejorTiempo = System.TimeSpan.FromSeconds(mejorTiempo);
 
-        text_TiempoBronce.text = "Tiempo < " + tiempoBronce + "s";
-        text_TiempoPlata.text = "Tiempo < " + tiempoPlata + "s";
-        text_TiempoOro.text = "Tiempo < " + tiempoBronce + "s";
-        text_MejorTiempo.text = "Mejor tiempo: " + mejorTiempo + "s";
+        if (mejorTiempo == 0)
+        {
+            text_MejorTiempo.text = "Mejor tiempo: " + "XX:XX:XX";
+        }
+        else
+        {
+            text_MejorTiempo.text = "Mejor tiempo: " + string.Format("{0:00}:{1:00}:{2:00}", t_MejorTiempo.Minutes, t_MejorTiempo.Seconds, t_MejorTiempo.Milliseconds);
+        }
+        text_TiempoBronce.text = "Tiempo < " + string.Format("{0:00}:{1:00}:{2:00}", t_bronce.Minutes, t_bronce.Seconds, t_bronce.Milliseconds);
+        text_TiempoPlata.text = "Tiempo < " + string.Format("{0:00}:{1:00}:{2:00}", t_Plata.Minutes, t_Plata.Seconds, t_Plata.Milliseconds);
+        text_TiempoOro.text = "Tiempo < " + string.Format("{0:00}:{1:00}:{2:00}", t_Oro.Minutes, t_Oro.Seconds, t_Oro.Milliseconds);
     }
 
 }
