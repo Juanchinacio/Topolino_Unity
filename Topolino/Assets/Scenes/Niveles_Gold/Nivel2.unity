@@ -8,8 +8,8 @@ OcclusionCullingSettings:
     smallestOccluder: 5
     smallestHole: 0.25
     backfaceThreshold: 100
-  m_SceneGUID: 00000000000000000000000000000000
-  m_OcclusionCullingData: {fileID: 0}
+  m_SceneGUID: 7830f3092f93dc34c84361b901c580e8
+  m_OcclusionCullingData: {fileID: 36300000, guid: 22f0100ba8bf6334f9f7add24a2dfb49, type: 2}
 --- !u!104 &2
 RenderSettings:
   m_ObjectHideFlags: 0
@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 0.85
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.3536038, g: 0.43459174, b: 0.5701797, a: 0.85}
+  m_IndirectSpecularColor: {r: 0.35292017, g: 0.43390617, b: 0.56942236, a: 0.85}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -78002,6 +78002,10 @@ PrefabInstance:
     - target: {fileID: 809978032253399632, guid: 9d182c85ac50360459c4c873924e7bb9, type: 3}
       propertyPath: m_Name
       value: Puerta 3 Botones
+      objectReference: {fileID: 0}
+    - target: {fileID: 4020267708176747361, guid: 9d182c85ac50360459c4c873924e7bb9, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 34.89
       objectReference: {fileID: 0}
     - target: {fileID: 5450333839339333169, guid: 9d182c85ac50360459c4c873924e7bb9, type: 3}
       propertyPath: m_RootOrder

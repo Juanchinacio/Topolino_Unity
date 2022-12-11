@@ -23,5 +23,8 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Niveles_Gold/Nivel4.unity
     guid: 7dc13f49bf80a3f47b401768a70cb8f7
+  - enabled: 1
+    path: Assets/Scenes/Niveles_Gold/Muerte.unity
+    guid: 97b91150b4c27bd41b7f6dd42734b0cd
   m_configObjects:
     com.unity.input.settings: {fileID: 11400000, guid: fc5ca933e9d0bab458b11f9d9d9003b0, type: 2}

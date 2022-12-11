@@ -248,10 +248,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   scenes:
   - Menu
-  - Level1_Alcantarillas
+  - Nivel 1
   - Nivel2
   - Nivel3
-  - Nivel4
+  - Muerte
 --- !u!4 &1017092689
 Transform:
   m_ObjectHideFlags: 0

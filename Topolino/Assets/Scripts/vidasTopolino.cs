@@ -23,7 +23,7 @@ public class vidasTopolino : MonoBehaviour
         if (numVidas <= 0)
         {
             // Ir a pantalla de derrota
-
+            GameManager.manager.LoadScene(4);
         }
         else
         {
