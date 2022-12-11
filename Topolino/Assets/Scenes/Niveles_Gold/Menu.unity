@@ -3672,7 +3672,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   id: 0
   img: {fileID: 385653256}
-  description: "Un peque\xF1o ratoncito italiano llamado Topolino"
+  description: Topolino es el nuevo ratoncito de los dientes. (1)
   controller: {fileID: 1301471987}
 --- !u!1 &388752808
 GameObject:
@@ -7798,7 +7798,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   id: 8
   img: {fileID: 880753370}
-  description: Me gradue guachoo
+  description: No podemos permitirlo, es hora de que les enfrentes. (9)
   controller: {fileID: 1301471987}
 --- !u!114 &880753370
 MonoBehaviour:
@@ -8174,7 +8174,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   id: 4
   img: {fileID: 898110304}
-  description: Me gradue guachoo
+  description: Hay otros seres que trabajan impacientes. (5)
   controller: {fileID: 1301471987}
 --- !u!114 &898110304
 MonoBehaviour:
@@ -8818,7 +8818,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   id: 5
   img: {fileID: 968442369}
-  description: Me funaron en twitter
+  description: Estos son los Fulletos y el hada Fatina. (6)
   controller: {fileID: 1301471987}
 --- !u!114 &968442369
 MonoBehaviour:
@@ -9507,7 +9507,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: 2557bdeb72afebe4c8aa8e735fb0e855, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 32536e8159b6dae4892c83f8cd09d50f, type: 3}
   m_Type: 0
   m_PreserveAspect: 1
   m_FillCenter: 1
@@ -11236,7 +11236,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   id: 3
   img: {fileID: 1205333851}
-  description: Me funaron en twitter
+  description: "Sin embargo, hab\xEDa algo que afectaba a su rutina. (4)"
   controller: {fileID: 1301471987}
 --- !u!114 &1205333851
 MonoBehaviour:
@@ -11349,7 +11349,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   id: 7
   img: {fileID: 1247530061}
-  description: Me funaron en twitter
+  description: Y robarle el trabajo de manera mezquina. (8)
   controller: {fileID: 1301471987}
 --- !u!114 &1247530061
 MonoBehaviour:
@@ -12136,7 +12136,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   id: 6
   img: {fileID: 1345376320}
-  description: Me gradue guachoo
+  description: A Topolino quieren sustituir estos entes. (7)
   controller: {fileID: 1301471987}
 --- !u!114 &1345376320
 MonoBehaviour:
@@ -15097,7 +15097,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   id: 1
   img: {fileID: 1543568855}
-  description: Arbolico
+  description: Recolecta dientes con mucha disciplina. (2)
   controller: {fileID: 1301471987}
 --- !u!1 &1559412266
 GameObject:
@@ -19814,7 +19814,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   id: 2
   img: {fileID: 2013821962}
-  description: Me gradue guachoo
+  description: Y trabaja en Italia, ayudando a sus gentes. (3)
   controller: {fileID: 1301471987}
 --- !u!114 &2013821962
 MonoBehaviour:
