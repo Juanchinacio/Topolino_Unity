@@ -36,6 +36,9 @@ public class new_Jump : MonoBehaviour
     public Animator _animator;
     private int _idJump;
 
+    [Header("Sound Effects")]
+    public AudioSource _jumpAudio;
+
     Rigidbody rb;
 
 
@@ -64,6 +67,9 @@ public class new_Jump : MonoBehaviour
 
     public void Jump()
     {
+
+        GameManager.manager.PlayAudio(_jumpAudio, Audio.sound);
+
         Debug.Log("Saltar");
         jumpForce = Mathf.Sqrt(jumpHeight * -2 * (Physics.gravity.y * actualGravityScale));
 

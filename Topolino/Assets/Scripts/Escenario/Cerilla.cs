@@ -10,6 +10,11 @@ public class Cerilla : MonoBehaviour
     public bool IsAvailable;
     public GameObject fire;
     public GameObject particulas;
+
+    [SerializeField]
+    public AudioSource turnOn;
+    public AudioSource turnOff;
+
     public void Update()
     {
         if (IsAvailable)
@@ -25,6 +30,8 @@ public class Cerilla : MonoBehaviour
 
     public void Encender()
     {
+        GameManager.manager.PlayAudio(turnOn, Audio.sound);
+
         estaEncendida = true;
         //transform.GetComponent<Renderer>().material.SetColor("_Color", Color.red);
         //gameObject.GetComponent<Renderer>().material.color = Color.red;
@@ -36,6 +43,8 @@ public class Cerilla : MonoBehaviour
     }
     public void Apagar()
     {
+        GameManager.manager.PlayAudio(turnOff, Audio.sound);
+
         estaEncendida = false;
         particulas.SetActive(false);
         //transform.GetComponent<Renderer>().material.SetColor("_Color", Color.white);

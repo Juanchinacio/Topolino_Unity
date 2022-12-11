@@ -60,4 +60,16 @@ public class GameManager : MonoBehaviour
         SceneManager.LoadScene(scenes[sceneNum]);
     }
 
+    public void PlayAudio(AudioSource audio, Audio type)
+    {
+        audio.volume = (type == Audio.mussic) ? musicVolume : soundVolume;
+        Debug.Log(type == Audio.mussic);
+        audio.Play();
+    }
+
+}
+
+public enum Audio
+{
+    mussic, sound
 }
