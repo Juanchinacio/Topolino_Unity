@@ -14,11 +14,15 @@ public class CollectablesController : MonoBehaviour
     public float textTimer;
     private float currentTime;
 
+    private void Awake()
+    {
+        BagManager.bag.LoadBag();
+    }
+
     private void Start()
     {
        // BagManager.bag.Clean();
        // BagManager.bag.SaveBag();
-        BagManager.bag.LoadBag();
         ShowCollectables();
     }
 
@@ -43,6 +47,7 @@ public class CollectablesController : MonoBehaviour
         {
             if (!BagManager.bag.CheckItem(ind))
                 c.img.color = Color.black;
+            Debug.Log(BagManager.bag.CheckItem(ind));
             ind++;
         }
     }

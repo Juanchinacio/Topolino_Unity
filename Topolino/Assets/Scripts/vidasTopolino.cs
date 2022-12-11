@@ -10,6 +10,9 @@ public class vidasTopolino : MonoBehaviour
     public TMP_Text numVidasText;
     public Vector3 ultimo_Checkpoint;
 
+    [SerializeField]
+    public AudioSource damage;
+
     private void Start()
     {
         ultimo_Checkpoint = transform.position;
@@ -27,6 +30,7 @@ public class vidasTopolino : MonoBehaviour
         }
         else
         {
+            GameManager.manager.PlayAudio(damage, Audio.sound);
             jugador.transform.position = ultimo_Checkpoint;
         }
     }

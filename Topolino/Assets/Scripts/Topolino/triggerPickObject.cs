@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class triggerPickObject : MonoBehaviour
 {
+
+
     public GameObject player;
     private void OnTriggerExit(Collider other)
     {

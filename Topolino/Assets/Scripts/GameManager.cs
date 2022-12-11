@@ -18,6 +18,10 @@ public class GameManager : MonoBehaviour
     [SerializeField]private string[] scenes;
     private int activeScene = 0;
 
+    //Variables for Audio manager
+    public float musicVolume = 0.5f;
+    public float soundVolume = 0.5f;
+
     #endregion
 
     void Start()
@@ -56,4 +60,16 @@ public class GameManager : MonoBehaviour
         SceneManager.LoadScene(scenes[sceneNum]);
     }
 
+    public void PlayAudio(AudioSource audio, Audio type)
+    {
+        audio.volume = (type == Audio.mussic) ? musicVolume : soundVolume;
+        Debug.Log(type == Audio.mussic);
+        audio.Play();
+    }
+
+}
+
+public enum Audio
+{
+    mussic, sound
 }

@@ -23,6 +23,10 @@ public class BagManager : MonoBehaviour
             Destroy(gameObject);
         }
     }
+    private void Start()
+    {
+        ResetBag();
+    }
 
     private bool OutsideBounds(int id)
     {
@@ -54,6 +58,12 @@ public class BagManager : MonoBehaviour
         if (OutsideBounds(id))
             return false;
         return items[id]; 
+    }
+
+    private void ResetBag()
+    {
+        Clean();
+        SaveBag();
     }
 
     public void SaveBag()
