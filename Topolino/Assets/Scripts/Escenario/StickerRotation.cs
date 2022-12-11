@@ -31,7 +31,6 @@ public class StickerRotation : MonoBehaviour
 
             currentValue -= valueToAdd;
 
-            Debug.Log(currentValue);
             //Apply new rotation
             t.Rotate(Vector3.up * currentValue);
 
