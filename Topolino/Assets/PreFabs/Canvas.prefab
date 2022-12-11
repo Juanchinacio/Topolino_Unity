@@ -680,6 +680,7 @@ GameObject:
   - component: {fileID: 2045504821742495574}
   - component: {fileID: 2045504821742495572}
   - component: {fileID: 2045504821742495573}
+  - component: {fileID: 3023088636540544432}
   m_Layer: 5
   m_Name: Joystick
   m_TagString: Untagged
@@ -746,6 +747,18 @@ MonoBehaviour:
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
   m_PixelsPerUnitMultiplier: 1
+--- !u!114 &3023088636540544432
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2045504821742495575}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1bdcd646e3cc65247bd8b246819c1de5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &2045504821949987535
 GameObject:
   m_ObjectHideFlags: 0
@@ -759,6 +772,7 @@ GameObject:
   - component: {fileID: 2045504821949987531}
   - component: {fileID: 2045504821949987532}
   - component: {fileID: 2045504821949987533}
+  - component: {fileID: 316016419739265934}
   m_Layer: 5
   m_Name: Interactuar
   m_TagString: Untagged
@@ -882,6 +896,18 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_ControlPath: <Keyboard>/e
+--- !u!114 &316016419739265934
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2045504821949987535}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1bdcd646e3cc65247bd8b246819c1de5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &2045504822121963418
 GameObject:
   m_ObjectHideFlags: 0
@@ -895,6 +921,7 @@ GameObject:
   - component: {fileID: 2045504822121963398}
   - component: {fileID: 2045504822121963399}
   - component: {fileID: 2045504822121963416}
+  - component: {fileID: 9231877401016735}
   m_Layer: 5
   m_Name: Saltar
   m_TagString: Untagged
@@ -1018,6 +1045,18 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_ControlPath: <Keyboard>/space
+--- !u!114 &9231877401016735
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2045504822121963418}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1bdcd646e3cc65247bd8b246819c1de5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &2045504822388952781
 GameObject:
   m_ObjectHideFlags: 0

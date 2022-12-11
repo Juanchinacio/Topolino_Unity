@@ -8,8 +8,8 @@ OcclusionCullingSettings:
     smallestOccluder: 5
     smallestHole: 0.25
     backfaceThreshold: 100
-  m_SceneGUID: 00000000000000000000000000000000
-  m_OcclusionCullingData: {fileID: 0}
+  m_SceneGUID: 7d69529e42d1d6c48b652c0e0b29e962
+  m_OcclusionCullingData: {fileID: 36300000, guid: c3da47cc83fc23448a8236da55424d81, type: 2}
 --- !u!104 &2
 RenderSettings:
   m_ObjectHideFlags: 0
@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.6110978, g: 0.5546134, b: 0.6513033, a: 1}
+  m_IndirectSpecularColor: {r: 0.61019164, g: 0.55389607, b: 0.6499783, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -57437,6 +57437,10 @@ PrefabInstance:
     - target: {fileID: 7466896045283072291, guid: c216a64f0ef0aaf4bb81cd327d85b286, type: 3}
       propertyPath: m_LocalRotation.z
       value: 0.15894106
+      objectReference: {fileID: 0}
+    - target: {fileID: 7466896045328400879, guid: c216a64f0ef0aaf4bb81cd327d85b286, type: 3}
+      propertyPath: idNivel
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 7466896045401229627, guid: c216a64f0ef0aaf4bb81cd327d85b286, type: 3}
       propertyPath: m_LocalPosition.x
