@@ -326,6 +326,7 @@ GameObject:
   - component: {fileID: 1710680663}
   - component: {fileID: 1791685882283041485}
   - component: {fileID: 2080242717068664585}
+  - component: {fileID: 2535353605394184766}
   m_Layer: 8
   m_Name: Player
   m_TagString: trampolin
@@ -575,6 +576,7 @@ MonoBehaviour:
   pausa: {fileID: 0}
   buttom_volverMenu: {fileID: 0}
   buttom_cerrarPausa: {fileID: 0}
+  tiemposNiveles: {fileID: 0}
 --- !u!136 &2080242717068664585
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -589,6 +591,14 @@ CapsuleCollider:
   m_Height: 1.6226815
   m_Direction: 1
   m_Center: {x: 0, y: -0.021087348, z: 0}
+--- !u!81 &2535353605394184766
+AudioListener:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 65024092033250472}
+  m_Enabled: 1
 --- !u!1 &65024092370243395
 GameObject:
   m_ObjectHideFlags: 0
@@ -918,7 +928,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &713319674725119102
 Transform:
   m_ObjectHideFlags: 0

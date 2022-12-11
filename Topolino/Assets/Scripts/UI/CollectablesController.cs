@@ -47,6 +47,7 @@ public class CollectablesController : MonoBehaviour
         {
             if (!BagManager.bag.CheckItem(ind))
                 c.img.color = Color.black;
+            Debug.Log(BagManager.bag.CheckItem(ind));
             ind++;
         }
     }

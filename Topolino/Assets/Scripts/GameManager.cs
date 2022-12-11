@@ -18,6 +18,10 @@ public class GameManager : MonoBehaviour
     [SerializeField]private string[] scenes;
     private int activeScene = 0;
 
+    //Variables for Audio manager
+    public float musicVolume = 0.5f;
+    public float soundVolume = 0.5f;
+
     #endregion
 
     void Start()

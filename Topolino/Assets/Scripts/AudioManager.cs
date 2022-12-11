@@ -8,6 +8,12 @@ public class AudioManager : MonoBehaviour
     [SerializeField] AudioSource[] sounds;
 
 
+    private void Awake()
+    {
+        ChangeMusicVolume(GameManager.manager.musicVolume);
+        ChangeSoundVolume(GameManager.manager.soundVolume);
+    }
+
     public void PlayMusic(Music type)
     {
         musics[(int)type].Play();
@@ -17,14 +23,11 @@ public class AudioManager : MonoBehaviour
         sounds[(int)type].Play();
     }
 
-    private void Start()
-    {
-        PlayMusic(Music.lobby);
-    }
-
     public void ChangeMusicVolume(float musicVolume)
     {
-        foreach(AudioSource a in musics)
+        GameManager.manager.musicVolume = musicVolume;
+
+        foreach (AudioSource a in musics)
         {
             a.volume = musicVolume;
         }
@@ -33,6 +36,8 @@ public class AudioManager : MonoBehaviour
 
     public void ChangeSoundVolume(float soundVolume)
     {
+        GameManager.manager.soundVolume = soundVolume;
+
         foreach (AudioSource a in sounds)
         {
             a.volume = soundVolume;
