@@ -53564,6 +53564,10 @@ PrefabInstance:
       propertyPath: m_Sprite
       value: 
       objectReference: {fileID: 21300000, guid: 13e52888d1a079f419e86ad50f90c759, type: 3}
+    - target: {fileID: 5678578880614475984, guid: 597a24e9e83ba804798499d23885abf4, type: 3}
+      propertyPath: id
+      value: 7
+      objectReference: {fileID: 0}
     - target: {fileID: 5960636164064441503, guid: 597a24e9e83ba804798499d23885abf4, type: 3}
       propertyPath: m_RootOrder
       value: 1
@@ -57675,7 +57679,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7466896045283072291, guid: c216a64f0ef0aaf4bb81cd327d85b286, type: 3}
       propertyPath: m_LocalRotation.z
-      value: 0.15894113
+      value: 0.1589411
       objectReference: {fileID: 0}
     - target: {fileID: 7466896045328400879, guid: c216a64f0ef0aaf4bb81cd327d85b286, type: 3}
       propertyPath: idNivel
@@ -57707,7 +57711,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7466896045401229627, guid: c216a64f0ef0aaf4bb81cd327d85b286, type: 3}
       propertyPath: m_LocalRotation.z
-      value: 0.15894113
+      value: 0.1589411
       objectReference: {fileID: 0}
     - target: {fileID: 7635590377439795724, guid: c216a64f0ef0aaf4bb81cd327d85b286, type: 3}
       propertyPath: musics.Array.size
