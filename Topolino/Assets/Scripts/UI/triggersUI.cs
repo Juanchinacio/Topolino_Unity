@@ -13,19 +13,4 @@ public class triggersUI : MonoBehaviour
         ui.SetActive(false);
         ui.transform.parent = transform;
     }
-
-    void OnTriggerEnter(Collider other)
-    {
-        if (other.tag == "Player")
-        {
-            ui.SetActive(true);
-        }
-    }
-    void OnTriggerExit(Collider other)
-    {
-        if (other.tag == "Player")
-        {
-            ui.SetActive(false);
-        }
-    }
 }
