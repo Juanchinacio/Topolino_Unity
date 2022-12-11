@@ -7,7 +7,7 @@ using UnityEngine.UI;
 
 public enum EmbestidorMode
 {
-    Path, Atack, Shout, Charge
+    Path, Atack, Shout
 }
 
 public class EmbestidorController : MonoBehaviour
@@ -24,17 +24,13 @@ public class EmbestidorController : MonoBehaviour
     [SerializeField] public bool shouter;
     [SerializeField] public float walkingSpeed;
     [SerializeField] public float runningSpeed;
-    [SerializeField] public float timeCharge;
-    [SerializeField] public float timeAtack;
 
     private NavMeshAgent agent;
-    public EmbestidorMode currentMode = EmbestidorMode.Path;
+    private EmbestidorMode currentMode = EmbestidorMode.Path;
     private int currentDestination = 0;
 
     private bool canShout;
     private bool shouting = false;
-    private bool canCharge = true;
-    private bool charging = false;
 
     public AudioSource _grito;
 
@@ -62,37 +58,30 @@ public class EmbestidorController : MonoBehaviour
         {
             case EmbestidorMode.Path:
                 //Set walking
-                agent.isStopped = false;
                 agent.speed = walkingSpeed;
 
                 //Set animation
                 _animator.SetBool(_idWalk, true);
-
+                _animator.SetBool(_idCharge, false);
+                
                 CheckDestination();
 
                 break;
 
-            case EmbestidorMode.Charge:
-
-                if (charging)
-                    break;
-
-                agent.SetDestination(player.transform.position);
-
-                //Stop
-                agent.isStopped = true;
-                agent.speed = runningSpeed;
-
+            case EmbestidorMode.Atack:
+                
                 //Set animation
                 _animator.SetBool(_idWalk, false);
-                _animator.SetBool(_idAtack, false);
                 _animator.SetBool(_idCharge, true);
 
-                StartCoroutine(ChargeAtack());
+                //Set runnning
+                agent.speed = runningSpeed;
+
+                AtackPlayer();
 
                 break;
 
-            case EmbestidorMode.Atack:
+            case EmbestidorMode.Shout:
                 break;
         }
     }
@@ -109,7 +98,7 @@ public class EmbestidorController : MonoBehaviour
         else
         {
             detected.SetActive(true);
-            currentMode = EmbestidorMode.Charge;
+            currentMode = EmbestidorMode.Atack;
         }
     }
 
@@ -118,12 +107,9 @@ public class EmbestidorController : MonoBehaviour
     {
         if (!shouting)
         {
-            if (!charging)
-            {
-                detected.SetActive(false);
-                currentMode = EmbestidorMode.Path;
-                agent.SetDestination(target[currentDestination].position);
-            }
+            detected.SetActive(false);
+            currentMode = EmbestidorMode.Path;
+            agent.SetDestination(target[currentDestination].position);
         }
     }
 
@@ -139,33 +125,13 @@ public class EmbestidorController : MonoBehaviour
 
     }
 
-    IEnumerator ChargeAtack()
+    public void AtackPlayer()
     {
-        charging = true;
-
-        yield return new WaitForSeconds(timeCharge);
-
-        currentMode = EmbestidorMode.Atack;
-        agent.isStopped = false;
-
-        _animator.SetBool(_idCharge, false);
-        _animator.SetBool(_idAtack, true);
-
-        float timeToStop = 0;
-        while (timeToStop < timeAtack)
-        {
-            timeToStop += Time.deltaTime;
-            agent.SetDestination(player.transform.position);
-
-            yield return null;
-        }
-
-        charging = false;
-        currentMode = EmbestidorMode.Path;
-        agent.SetDestination(target[currentDestination].position);
-        _animator.SetBool(_idAtack, false);
-        detected.SetActive(false);
+        //Move to player position
+        agent.SetDestination(player.transform.position);
     }
+
+
 
     //Checks the position inside path, sets next destination
     public void CheckDestination()
