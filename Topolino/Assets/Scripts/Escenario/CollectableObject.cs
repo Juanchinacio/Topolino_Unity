@@ -6,6 +6,8 @@ public class CollectableObject : MonoBehaviour
 {
     [SerializeField] int id;
 
+    [SerializeField] public AudioSource sticker;
+
     private void Start()
     {
         //Si ya tiene este objeto se destruye, importante guardar y cargar los preferences del bag
@@ -20,9 +22,20 @@ public class CollectableObject : MonoBehaviour
     {
         if (other.gameObject.tag == "Player")
         {
-            BagManager.bag.CollectItem(id);
-            Destroy(this.gameObject);
-            BagManager.bag.SaveBag();
+            GetComponent<SpriteRenderer>().enabled = false;
+            GameManager.manager.PlayAudio(sticker, Audio.sound);
+            new WaitForSeconds(10f);
+            StartCoroutine(DestroyCollectable());
         }
     }
+
+    IEnumerator DestroyCollectable()
+    {
+        Debug.Log("Sonar audio");
+        BagManager.bag.CollectItem(id);
+        yield return new WaitForSeconds(1);
+        Destroy(this.gameObject);
+        BagManager.bag.SaveBag();
+    }
+
 }

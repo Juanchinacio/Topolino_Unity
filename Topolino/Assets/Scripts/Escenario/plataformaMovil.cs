@@ -14,6 +14,10 @@ public class plataformaMovil : MonoBehaviour
 
     public GameObject plataforma;
 
+
+    [SerializeField]
+    public AudioSource activate;
+
     void Awake()
     {
         plataforma = transform.GetChild(0).gameObject;
@@ -66,6 +70,8 @@ public class plataformaMovil : MonoBehaviour
 
     public void AvanzarPosicion()
     {
+        GameManager.manager.PlayAudio(activate, Audio.sound);
+
         nextWayPoint = wayPoints[0];
         ////if (puedoInteractuar == true)
         ////{
@@ -77,6 +83,7 @@ public class plataformaMovil : MonoBehaviour
 
     public void RetrocederPosicion()
     {
+        GameManager.manager.PlayAudio(activate, Audio.sound);
         nextWayPoint = wayPoints[1];
         ////if (puedoInteractuar == true)
         ////{

@@ -18,9 +18,19 @@ public class PickObject : MonoBehaviour
     public List<Collider> Objetos;
     public bool llevandoObjeto = false;
 
+    [Header("Animator")]
+    public Animator _animator;
+    private int _idHold;
+
+    [SerializeField]
+    public AudioSource grab;
+    public AudioSource drop;
+
 
     private void Start()
     {
+        _idHold = Animator.StringToHash("isHolding");
+
         top_Object_Transform = top_Object.transform;
         front_Object_Transform = front_Object.transform;
     }
@@ -45,6 +55,9 @@ public class PickObject : MonoBehaviour
 
     public void SoltarObjeto()
     {
+        _animator.SetBool(_idHold, false);
+        GameManager.manager.PlayAudio(drop, Audio.sound);
+
         llevandoObjeto = false;
         reposicionando = false;
         // Quitar dependencia del jugador
@@ -58,9 +71,11 @@ public class PickObject : MonoBehaviour
 
     public void CogerObjeto()
     {
+        _animator.SetBool(_idHold, true);
+
         Debug.Log("Coger objeto");
 
-        
+        GameManager.manager.PlayAudio(grab, Audio.sound);
 
         llevandoObjeto = true;
 
