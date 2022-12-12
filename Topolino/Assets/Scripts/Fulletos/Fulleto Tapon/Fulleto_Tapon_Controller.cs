@@ -1,7 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
-using TreeEditor;
-using UnityEditor.Experimental.GraphView;
+
 using UnityEngine;
 
 public class Fulleto_Tapon_Controller : MonoBehaviour
@@ -11,65 +10,65 @@ public class Fulleto_Tapon_Controller : MonoBehaviour
     #endregion
 
     #region Variables Privadas
-    // Declaracion BT
-    private BehaviourTreeEngine bt;
-
-    // Percepciones
-    public bool esTopolinoCerca = true;
-    public bool esTopolinoVisto = true;
+    //// Declaracion BT
+    //private BehaviourTreeEngine bt;
+    //
+    //// Percepciones
+    //public bool esTopolinoCerca = true;
+    //public bool esTopolinoVisto = true;
     #endregion
 
     void Start()
     {
         // Creacion behaviour tree
-        bt = new BehaviourTreeEngine();
-
+        // = new BehaviourTreeEngine();
+        //
         // Percepciones
-        Perception percepcion_EsTopolinoCerca = bt.CreatePerception<ValuePerception>(() => esTopolinoCerca);
-        Perception percepcion_EsTopolinoVisto = bt.CreatePerception<ValuePerception>(() => esTopolinoVisto);
-        Perception percepcion = bt.CreatePerception<ValuePerception>(() => esTopolinoVisto == true);
+        //rception percepcion_EsTopolinoCerca = bt.CreatePerception<ValuePerception>(() => esTopolinoCerca);
+        //rception percepcion_EsTopolinoVisto = bt.CreatePerception<ValuePerception>(() => esTopolinoVisto);
+        //rception percepcion = bt.CreatePerception<ValuePerception>(() => esTopolinoVisto == true);
         // Acciones
-        LeafNode accion_Patrullo = bt.CreateLeafNode("patrullo", Patrullo, AlwaysSucceed);
-        LeafNode accion_Grito = bt.CreateLeafNode("grito", Grito, AlwaysSucceed);
-        LeafNode accion_Persigo = bt.CreateLeafNode("persigo", Persigo, AlwaysSucceed);
-        LeafNode accion_Ataco = bt.CreateLeafNode("ataco", Ataco, AlwaysSucceed);
-        LeafNode accion_Busco = bt.CreateLeafNode("busco", Busco, AlwaysSucceed);
-
+        //afNode accion_Patrullo = bt.CreateLeafNode("patrullo", Patrullo, AlwaysSucceed);
+        //afNode accion_Grito = bt.CreateLeafNode("grito", Grito, AlwaysSucceed);
+        //afNode accion_Persigo = bt.CreateLeafNode("persigo", Persigo, AlwaysSucceed);
+        //afNode accion_Ataco = bt.CreateLeafNode("ataco", Ataco, AlwaysSucceed);
+        //afNode accion_Busco = bt.CreateLeafNode("busco", Busco, AlwaysSucceed);
+        //
         // Secuencias
-        SequenceNode secuencia_VeoTopolino = bt.CreateSequenceNode("seq_VeoTopolino", false);
-        SequenceNode secuencia_GritoAlerta = bt.CreateSequenceNode("seq_GritoAlerta", false);
-        SequenceNode secuencia_QueHago = bt.CreateSequenceNode("seq_QueHago", false);
-
+        //quenceNode secuencia_VeoTopolino = bt.CreateSequenceNode("seq_VeoTopolino", false);
+        //quenceNode secuencia_GritoAlerta = bt.CreateSequenceNode("seq_GritoAlerta", false);
+        //quenceNode secuencia_QueHago = bt.CreateSequenceNode("seq_QueHago", false);
+        //
         // Condiciones
-        ConditionalDecoratorNode condicion_EsTopolinoVisto_0 = bt.CreateConditionalNode("esVisto_0", secuencia_VeoTopolino, percepcion_EsTopolinoVisto);
-        ConditionalDecoratorNode condicion_EsTopolinoCerca_0 = bt.CreateConditionalNode("esCerca_0", accion_Persigo, percepcion_EsTopolinoCerca);
-        ConditionalDecoratorNode condicion_EsTopolinoVisto_1 = bt.CreateConditionalNode("esVisto_1", accion_Busco, percepcion_EsTopolinoVisto);
-        ConditionalDecoratorNode condicion_EsTopolinoCerca_1 = bt.CreateConditionalNode("esCerca_1", accion_Ataco, percepcion_EsTopolinoCerca);
-
+        //nditionalDecoratorNode condicion_EsTopolinoVisto_0 = bt.CreateConditionalNode("esVisto_0", secuencia_VeoTopolino, percepcion_EsTopolinoVisto);
+        //nditionalDecoratorNode condicion_EsTopolinoCerca_0 = bt.CreateConditionalNode("esCerca_0", accion_Persigo, percepcion_EsTopolinoCerca);
+        //nditionalDecoratorNode condicion_EsTopolinoVisto_1 = bt.CreateConditionalNode("esVisto_1", accion_Busco, percepcion_EsTopolinoVisto);
+        //nditionalDecoratorNode condicion_EsTopolinoCerca_1 = bt.CreateConditionalNode("esCerca_1", accion_Ataco, percepcion_EsTopolinoCerca);
+        //
         // Bucle
         //LoopDecoratorNode buclePrincipal = bt.CreateLoopNode("buclePrincipal", condicion_EsTopolinoVisto_0);
-
+        //
         // Coneccion de nodos
         //   - Rellenado de secuencias
-        secuencia_VeoTopolino.AddChild(condicion_EsTopolinoVisto_0);
-        secuencia_VeoTopolino.AddChild(secuencia_GritoAlerta);
-
-        secuencia_GritoAlerta.AddChild(accion_Grito);
-        secuencia_GritoAlerta.AddChild(secuencia_QueHago);
-
-        secuencia_QueHago.AddChild(condicion_EsTopolinoCerca_0);
-        secuencia_QueHago.AddChild(condicion_EsTopolinoCerca_1);
-        secuencia_QueHago.AddChild(condicion_EsTopolinoVisto_1);
-
-        LoopDecoratorNode buclePrincipal = bt.CreateLoopNode("buclePrincipal", condicion_EsTopolinoVisto_0);
-
-
-        bt.SetRootNode(buclePrincipal);
+        //cuencia_VeoTopolino.AddChild(condicion_EsTopolinoVisto_0);
+        //cuencia_VeoTopolino.AddChild(secuencia_GritoAlerta);
+        //
+        //cuencia_GritoAlerta.AddChild(accion_Grito);
+        //cuencia_GritoAlerta.AddChild(secuencia_QueHago);
+        //
+        //cuencia_QueHago.AddChild(condicion_EsTopolinoCerca_0);
+        //cuencia_QueHago.AddChild(condicion_EsTopolinoCerca_1);
+        //cuencia_QueHago.AddChild(condicion_EsTopolinoVisto_1);
+        //
+        //opDecoratorNode buclePrincipal = bt.CreateLoopNode("buclePrincipal", condicion_EsTopolinoVisto_0);
+        //
+        //
+        //.SetRootNode(buclePrincipal);
     }
 
     void Update()
     {
-        bt.Update();
+        //bt.Update();
     }
 
     #region Acciones
@@ -98,28 +97,28 @@ public class Fulleto_Tapon_Controller : MonoBehaviour
     #region Percepciones
     public void topolinoCerca()
     {
-        esTopolinoCerca = true;
+        //esTopolinoCerca = true;
     }
     public void topolinoNoCerca()
     {
-        esTopolinoCerca = false;
+        //esTopolinoCerca = false;
     }
     public void topolinoVisto()
     {
-        esTopolinoVisto = true;
+        //esTopolinoVisto = true;
     }
     public void topolinoNoVisto()
     {
-        esTopolinoVisto = false;
+        //esTopolinoVisto = false;
     }
     #endregion
 
-    private ReturnValues AlwaysSucceed()
-    {
-        return ReturnValues.Succeed;
-    }
-    private ReturnValues AlwaysFailed()
-    {
-        return ReturnValues.Failed;
-    }
+    //private ReturnValues AlwaysSucceed()
+    //{
+    //    return ReturnValues.Succeed;
+    //}
+    //private ReturnValues AlwaysFailed()
+    //{
+    //    return ReturnValues.Failed;
+    //}
 }
