@@ -12,7 +12,10 @@ public class diente : MonoBehaviour
     }
     void OnTriggerEnter(Collider other)
     {
-        tiemposNiveles.GuardarTiempo();
-        GameManager.manager.LoadScene(0);
+        if(other.gameObject.name == "Player")
+        {
+            tiemposNiveles.GuardarTiempo();
+            GameManager.manager.LoadScene(0);
+        }
     }
 }

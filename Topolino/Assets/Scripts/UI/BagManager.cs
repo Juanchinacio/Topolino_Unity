@@ -25,7 +25,7 @@ public class BagManager : MonoBehaviour
     }
     private void Start()
     {
-        ResetBag();
+        //ResetBag();
     }
 
     private bool OutsideBounds(int id)
