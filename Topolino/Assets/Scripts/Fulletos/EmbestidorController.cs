@@ -7,7 +7,7 @@ using UnityEngine.UI;
 
 public enum EmbestidorMode
 {
-    Path, Atack, Shout
+    Path, Atack, Shout, Charge
 }
 
 public class EmbestidorController : MonoBehaviour
@@ -24,13 +24,17 @@ public class EmbestidorController : MonoBehaviour
     [SerializeField] public bool shouter;
     [SerializeField] public float walkingSpeed;
     [SerializeField] public float runningSpeed;
+    [SerializeField] public float timeCharge;
+    [SerializeField] public float timeAtack;
 
     private NavMeshAgent agent;
-    private EmbestidorMode currentMode = EmbestidorMode.Path;
+    public EmbestidorMode currentMode = EmbestidorMode.Path;
     private int currentDestination = 0;
 
     private bool canShout;
     private bool shouting = false;
+    private bool canCharge = true;
+    private bool charging = false;
 
     public AudioSource _grito;
 
@@ -58,30 +62,37 @@ public class EmbestidorController : MonoBehaviour
         {
             case EmbestidorMode.Path:
                 //Set walking
+                agent.isStopped = false;
                 agent.speed = walkingSpeed;
 
                 //Set animation
                 _animator.SetBool(_idWalk, true);
-                _animator.SetBool(_idCharge, false);
-                
+
                 CheckDestination();
 
                 break;
 
-            case EmbestidorMode.Atack:
-                
-                //Set animation
-                _animator.SetBool(_idWalk, false);
-                _animator.SetBool(_idCharge, true);
+            case EmbestidorMode.Charge:
 
-                //Set runnning
+                if (charging)
+                    break;
+
+                agent.SetDestination(player.transform.position);
+
+                //Stop
+                agent.isStopped = true;
                 agent.speed = runningSpeed;
 
-                AtackPlayer();
+                //Set animation
+                _animator.SetBool(_idWalk, false);
+                _animator.SetBool(_idAtack, false);
+                _animator.SetBool(_idCharge, true);
+
+                StartCoroutine(ChargeAtack());
 
                 break;
 
-            case EmbestidorMode.Shout:
+            case EmbestidorMode.Atack:
                 break;
         }
     }
@@ -98,7 +109,7 @@ public class EmbestidorController : MonoBehaviour
         else
         {
             detected.SetActive(true);
-            currentMode = EmbestidorMode.Atack;
+            currentMode = EmbestidorMode.Charge;
         }
     }
 
@@ -107,9 +118,12 @@ public class EmbestidorController : MonoBehaviour
     {
         if (!shouting)
         {
-            detected.SetActive(false);
-            currentMode = EmbestidorMode.Path;
-            agent.SetDestination(target[currentDestination].position);
+            if (!charging)
+            {
+                detected.SetActive(false);
+                currentMode = EmbestidorMode.Path;
+                agent.SetDestination(target[currentDestination].position);
+            }
         }
     }
 
@@ -125,13 +139,33 @@ public class EmbestidorController : MonoBehaviour
 
     }
 
-    public void AtackPlayer()
+    IEnumerator ChargeAtack()
     {
-        //Move to player position
-        agent.SetDestination(player.transform.position);
+        charging = true;
+
+        yield return new WaitForSeconds(timeCharge);
+
+        currentMode = EmbestidorMode.Atack;
+        agent.isStopped = false;
+
+        _animator.SetBool(_idCharge, false);
+        _animator.SetBool(_idAtack, true);
+
+        float timeToStop = 0;
+        while (timeToStop < timeAtack)
+        {
+            timeToStop += Time.deltaTime;
+            agent.SetDestination(player.transform.position);
+
+            yield return null;
+        }
+
+        charging = false;
+        currentMode = EmbestidorMode.Path;
+        agent.SetDestination(target[currentDestination].position);
+        _animator.SetBool(_idAtack, false);
+        detected.SetActive(false);
     }
-
-
 
     //Checks the position inside path, sets next destination
     public void CheckDestination()
