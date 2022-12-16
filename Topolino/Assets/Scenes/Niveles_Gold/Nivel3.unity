@@ -19236,7 +19236,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7309742059201405405, guid: 92e8925f0fc6f094a9f998672ad5718a, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -19.3
+      value: 43.8
       objectReference: {fileID: 0}
     - target: {fileID: 7309742059201405405, guid: 92e8925f0fc6f094a9f998672ad5718a, type: 3}
       propertyPath: m_LocalPosition.z
@@ -60298,7 +60298,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7466896045283072291, guid: c216a64f0ef0aaf4bb81cd327d85b286, type: 3}
       propertyPath: m_LocalRotation.z
-      value: 0.15516153
+      value: 0.1551615
       objectReference: {fileID: 0}
     - target: {fileID: 7466896045328400879, guid: c216a64f0ef0aaf4bb81cd327d85b286, type: 3}
       propertyPath: idNivel
@@ -60334,7 +60334,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7466896045401229627, guid: c216a64f0ef0aaf4bb81cd327d85b286, type: 3}
       propertyPath: m_LocalRotation.z
-      value: 0.15516153
+      value: 0.1551615
       objectReference: {fileID: 0}
     - target: {fileID: 7635590377439795724, guid: c216a64f0ef0aaf4bb81cd327d85b286, type: 3}
       propertyPath: musics.Array.size

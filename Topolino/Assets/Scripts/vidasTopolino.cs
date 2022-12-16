@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class vidasTopolino : MonoBehaviour
 {
@@ -26,7 +27,8 @@ public class vidasTopolino : MonoBehaviour
         if (numVidas <= 0)
         {
             // Ir a pantalla de derrota
-            GameManager.manager.LoadScene(4);
+            SceneManager.LoadScene(6);
+            //GameManager.manager.LoadScene(4);
         }
         else
         {

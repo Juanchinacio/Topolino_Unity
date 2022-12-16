@@ -23,8 +23,9 @@ public class pausaController : MonoBehaviour
             pausa.SetActive(true);
             activado = true;
             tiemposNiveles.pausarCronometro();
+            Time.timeScale = 0;
         }
-        
+
     }
 
     public void volverMenu()
@@ -37,6 +38,7 @@ public class pausaController : MonoBehaviour
         tiemposNiveles.reaudarCronometro();
         pausa.SetActive(false);
         activado = false;
+        Time.timeScale = 1;
     }
 
     private void Start()

@@ -168,10 +168,10 @@ RectTransform:
   m_Father: {fileID: 2045504821078159481}
   m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 1, y: 1}
-  m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: -153, y: -221}
-  m_SizeDelta: {x: 135.1986, y: 111.91}
+  m_AnchorMin: {x: 0.88372904, y: 0.7442963}
+  m_AnchorMax: {x: 0.9548751, y: 0.85}
+  m_AnchoredPosition: {x: 2.5, y: -2}
+  m_SizeDelta: {x: -1.8014069, y: -2.0899963}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &1022372093
 CanvasRenderer:
@@ -303,10 +303,10 @@ RectTransform:
   m_Father: {fileID: 2045504821078159481}
   m_RootOrder: 7
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.5, y: 0.5}
-  m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 683.4551, y: 319.00586}
-  m_SizeDelta: {x: 111.8993, y: 111.8993}
+  m_AnchorMin: {x: 0.8245209, y: 0.7442963}
+  m_AnchorMax: {x: 0.88372904, y: 0.85}
+  m_AnchoredPosition: {x: 2.9550781, y: -1.9941406}
+  m_SizeDelta: {x: -3.100708, y: -2.100708}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &1562135681
 CanvasRenderer:
@@ -414,18 +414,18 @@ MonoBehaviour:
       m_Calls: []
   m_FontData:
     m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
-    m_FontSize: 32
-    m_FontStyle: 0
-    m_BestFit: 0
+    m_FontSize: 25
+    m_FontStyle: 1
+    m_BestFit: 1
     m_MinSize: 10
-    m_MaxSize: 57
+    m_MaxSize: 25
     m_Alignment: 4
     m_AlignByGeometry: 0
     m_RichText: 1
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Shift
+  m_Text: Interactuar
 --- !u!1 &2045504821078159485
 GameObject:
   m_ObjectHideFlags: 0
@@ -895,7 +895,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6d54531977ecb194c95e2d3aa7a5d72a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_ControlPath: <Keyboard>/e
+  m_ControlPath: <Keyboard>/shift
 --- !u!114 &316016419739265934
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1125,18 +1125,18 @@ MonoBehaviour:
       m_Calls: []
   m_FontData:
     m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
-    m_FontSize: 49
-    m_FontStyle: 0
-    m_BestFit: 0
+    m_FontSize: 25
+    m_FontStyle: 1
+    m_BestFit: 1
     m_MinSize: 10
-    m_MaxSize: 50
+    m_MaxSize: 25
     m_Alignment: 4
     m_AlignByGeometry: 0
     m_RichText: 1
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: A
+  m_Text: Saltar
 --- !u!1 &2045504822504630991
 GameObject:
   m_ObjectHideFlags: 0
