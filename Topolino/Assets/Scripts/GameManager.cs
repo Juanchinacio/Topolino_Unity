@@ -56,6 +56,7 @@ public class GameManager : MonoBehaviour
     //Load scene using index defined in inspector to easy define next scene
     public void LoadScene(int sceneNum)
     {
+        Time.timeScale = 1;
         activeScene = sceneNum;
         SceneManager.LoadScene(scenes[sceneNum]);
     }

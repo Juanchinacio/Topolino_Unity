@@ -96,6 +96,7 @@ public class MenuController : MonoBehaviour
     #region Title panel
     public void UpTitle()
     {
+        Debug.Log("Funciono");
         //Down Menu
         canvasGroup = cg_Title;
         rectTransform = rt_Title;
