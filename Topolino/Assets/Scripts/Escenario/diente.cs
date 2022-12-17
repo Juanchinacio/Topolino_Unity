@@ -15,8 +15,7 @@ public class diente : MonoBehaviour
         if(other.gameObject.name == "Player")
         {
             tiemposNiveles.GuardarTiempo();
-            
-            //GameManager.manager.LoadScene(0);
+            GameManager.manager.LoadScene(0);
         }
     }
 }
